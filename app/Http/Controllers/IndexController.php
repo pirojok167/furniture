@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Service;
 use App\User;
 
 class IndexController extends Controller
@@ -19,11 +20,11 @@ class IndexController extends Controller
 
 	public function __construct()
 	{
-
+		$this->services = Service::all();
 	}
 
 	public function index()
 	{
-		return view('home');
+		return view('home')->with('services', $this->services);
 	}
 }
