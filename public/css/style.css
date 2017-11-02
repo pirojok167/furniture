@@ -1,0 +1,28 @@
+.outline-n {
+  outline: none !important; }
+
+.pointer {
+  cursor: pointer; }
+
+.img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
+
+@media (max-width: 575px) {
+  .fr-xs {
+    float: right !important; } }
+@media (min-width: 576px) and (max-width: 767px) {
+  .fr-sm {
+    float: right !important; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .fr-md {
+    float: right !important; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .fr-lg {
+    float: right !important; } }
+@media (min-width: 1200px) {
+  .fr-xl {
+    float: right !important; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,3 +1,3 @@
-<div>
-    ФУУТЕР
-</div>
+<footer>
+    aenth
+</footer>
