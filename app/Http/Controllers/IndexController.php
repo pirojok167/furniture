@@ -9,17 +9,21 @@
 namespace App\Http\Controllers;
 
 
-class SiteController
+use App\User;
+
+class IndexController extends Controller
 {
-	public $view = false;
+	public $materials;
+	public $services;
+	public $contacts;
 
 	public function __construct()
 	{
-		$this->view = view('lulcum')->render();
+
 	}
 
 	public function index()
 	{
-		return $this->view;
+		return view('home');
 	}
 }
