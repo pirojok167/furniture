@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-	    return view('admin.services.index');
+    	$services = Service::all();
+	    return view('admin.services.index')->with('services', $services);
     }
 
     /**
@@ -35,7 +37,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+	    $data = Service::validate($request);
+
+	    $image = Service::saveImage($request);
+	    $data['image'] = $image;
+
+        $service = new Service();
+	    $result = $service->fill($data)->save() ? 'Услуга добавлена' : 'Ошибка';
+	    return redirect()->route('admin.services.index')->with('result', $result);
     }
 
     /**
