@@ -31,7 +31,7 @@
         </nav>
 @endsection
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: #f9f9f9;">
         <div class="container">
             <h2 class="text-center">Перетяжка и изготовление мягкой мебели в Воронеже</h2>
             <div class="row">
@@ -54,19 +54,19 @@
             <h1 class="text-center">Наши работы</h1>
             <div class="row">
                 <div class="col-6 bg-light">
-                    <img class="img" src="" alt="">
+                    <img class="w-100" src="" alt="">
                     <p>Перетяжка мягкой мебели</p>
                 </div>
                 <div class="col-6 bg-light">
-                    <img class="img" src="" alt="">
+                    <img class="w-100" src="" alt="">
                     <p>Ремонт каркаса, замена механизмов  трансформации</p>
                 </div>
                 <div class="col-6 bg-light">
-                    <img class="img" src="" alt="">
+                    <img class="w-100" src="" alt="">
                     <p>Ремонт каркаса, замена механизмов  трансформации</p>
                 </div>
                 <div class="col-6 bg-light">
-                    <img class="img" src="" alt="">
+                    <img class="w-100" src="" alt="">
                     <p>Ремонт каркаса, замена механизмов  трансформации</p>
                 </div>
             </div>
