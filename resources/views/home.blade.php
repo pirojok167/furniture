@@ -78,29 +78,45 @@
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
                 </div>
                 <div class="row">
-                    @foreach($materials as $material)
-                        <div class="col-3 mb-3">
-                            <div class="p-2" style="background-color: #f0f0f0;">
-                                <p class="text-center">{{ $material->name }}</p>
-                                <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
+                    {{--{{ dd($materials_chunk[0]) }}--}}
+                    @foreach($materials_chunk as $k => $materials)
+                        @if($k === 0)
+                            @foreach($materials as $material)
+                                <div class="col-3 mb-3">
+                                    <div class="p-2" style="background-color: #f0f0f0;">
+                                        <p class="text-center">{{ $material->name }}</p>
+                                        <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    @endforeach
+                    @if(count($materials_chunk) >= 2)
+                        <div class="collapse" id="collapse1">
+                            <div class="row">
+                            @foreach($materials_chunk as $k => $materials)
+                                @foreach($materials as $material)
+                                    @if($k > 0)
+                                        <div class="col-3 mb-3">
+                                            <div class="p-2" style="background-color: #f0f0f0;">
+                                                <p class="text-center">{{ $material->name }}</p>
+                                                <img class="w-100" style="height: 194px;object-fit: cover"
+                                                     src="{{ asset("images/$material->image") }}">
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            @endforeach
                             </div>
                         </div>
+                    @endif
+                    @if(count($materials_chunk) >= 2)
                         <div class="col-12">
                             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                                 Button with data-target
                             </button>
                         </div>
-                        <div class="collapse" id="collapse1">
-                          <div class="row">
-                              <div class="col-3 mb-3">
-                                  <div class="p-2" style="background-color: #f0f0f0;">
-                                      <p class="text-center">{{ $material->name }}</p>
-                                      <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
-                                  </div>
-                              </div>
-                          </div>
-                        </div>
-                    @endforeach
+                    @endif
                 </div>
             </div>
             <div id="order" class="mb-5">

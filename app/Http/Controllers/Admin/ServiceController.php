@@ -85,10 +85,13 @@ class ServiceController extends Controller
 	    $data = Service::validate($request);
 
 	    $image = Image::saveImage($request, 'services');
-		if ($image) {
+
+	    if ($image != false) {
 			Image::destroyImage($service->image);
+		    $data['image'] = $image;
 		}
-	    $data['image'] = $image ?? $service->image;
+
+//	    $data['image'] = $image ?? $service->image;
 
 	    if ($data['name'] !== $service->name
 		    || $data['description'] !== $service->description

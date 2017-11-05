@@ -24,9 +24,11 @@ class IndexController extends Controller
 
 	public function index()
 	{
+		$materials = $this->materials->chunk(4);
+
 		return view('home')->with([
 			'services' => $this->services,
 			'contacts' => $this->contacts,
-			'materials' => $this->materials]);
+			'materials_chunk' => $materials]);
 	}
 }

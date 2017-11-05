@@ -24,7 +24,9 @@ class Image extends Model
 					'image_1' => 'image',
 					'image_2' => 'image',
 				]);
+
 				if ($validator->fails()) return false;
+
 				$image = \Storage::disk('images')->putFile($dir, $file);
 				return $image;
 			}
