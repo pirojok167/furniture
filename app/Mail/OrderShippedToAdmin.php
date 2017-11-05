@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderShipped extends Mailable
+class OrderShippedToAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,13 +17,13 @@ class OrderShipped extends Mailable
      * @return void
      */
 
-    public $user_data;
-    public $admin_mail;
+	public $user_data;
+	public $admin_mail;
 
     public function __construct($user_data, $admin_mail)
     {
-        $this->user_data = $user_data;
-        $this->admin_mail = $admin_mail;
+	    $this->user_data = $user_data;
+	    $this->admin_mail = $admin_mail;
     }
 
     /**
@@ -33,6 +33,6 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->from('pirojok167@gmail.com')->view('mail.order')->subject('Новая заявка');
+        return $this->from(config('app.url'))->markdown('emails.orders.shipped_to_admin')->subject('Новая заявка');
     }
 }

@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Mail\OrderShipped;
+use App\Mail\OrderShippedToAdmin;
+use App\Mail\OrderShippedToClient;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -28,10 +30,10 @@ class Order extends Model
 
 	public static function send($user_data)
 	{
-		$admin = Contact::select()->first();
+		$admin = Contact::first();
 
-		$result_1 = \Mail::to('pirojok167@gmail.com')->send(new OrderShipped($user_data, 'pirojok167@gmail.com'));
-		$result_2 = \Mail::to($user_data['email'])->send(new OrderShipped($user_data, 'pirojok167@gmail.com'));
+		$result_1 = \Mail::to($admin->email)->send(new OrderShippedToAdmin($user_data, $admin->email));
+		$result_2 = \Mail::to($user_data['email'])->send(new OrderShippedToClient($user_data, $admin->email));
 
 		if ($result_1 && $result_2)	return true;
 		return false;

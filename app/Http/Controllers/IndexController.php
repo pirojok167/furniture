@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Contact;
 use App\Service;
 
@@ -19,12 +18,14 @@ class IndexController extends Controller
 	{
 		$this->services = Service::all();
 		$this->contacts = Contact::first();
+		$this->materials = Contact::all();
 	}
 
 	public function index()
 	{
-
-
-		return view('home')->with(['services' => $this->services, 'contacts' => $this->contacts]);
+		return view('home')->with([
+			'services' => $this->services,
+			'contacts' => $this->contacts,
+			'materials' => $this->materials]);
 	}
 }
