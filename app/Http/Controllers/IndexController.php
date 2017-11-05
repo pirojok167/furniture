@@ -9,22 +9,22 @@
 namespace App\Http\Controllers;
 
 
+use App\Contact;
 use App\Service;
-use App\User;
 
 class IndexController extends Controller
 {
-	public $materials;
-	public $services;
-	public $contacts;
 
 	public function __construct()
 	{
 		$this->services = Service::all();
+		$this->contacts = Contact::first();
 	}
 
 	public function index()
 	{
+
+
 		return view('home')->with(['services' => $this->services, 'contacts' => $this->contacts]);
 	}
 }
