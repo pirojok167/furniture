@@ -14,9 +14,11 @@
 @endif
 @yield('header')
 @yield('content')
+@section('paginate')
 @if(isset($paginate) && !empty($paginate))
     {!! $paginate !!}
 @endif
+@show
 @section('footer')
     @include('partials.footer')
 @show

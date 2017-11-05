@@ -1,4 +1,4 @@
-<ul class="pagination justify-content-center">
+<ul class="pagination justify-content-center mb-0 mt-2">
     @if($items->lastPage() > 1)
         @if($items->currentPage() !== 1)
             <li class="page-item"><a class="page-link text-light-blue"

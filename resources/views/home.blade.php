@@ -61,7 +61,7 @@
                 <div class="row">
                     @foreach($services as $service)
                         <div class="col-6 mb-3 services-block">
-                            <div class="w-100 p-2" style="background-color: #f0f0f0;">
+                            <div class="w-100 p-2 bg-gray">
                                 <div class="services-overflow">
                                     <img class="w-100" style="height: 400px;object-fit: cover" src="{{ asset("images/$service->image") }}">
                                     <div class="services-overflow-img-layer"></div>
@@ -80,7 +80,7 @@
                 <div class="row">
                     @foreach($materials as $material)
                         <div class="col-3 mb-3">
-                            <div class="p-2" style="background-color: #f0f0f0;">
+                            <div class="p-2 bg-gray">
                                 <p class="text-center">{{ $material->name }}</p>
                                 <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
                             </div>
@@ -93,7 +93,7 @@
                         <div class="collapse" id="collapse1">
                           <div class="row">
                               <div class="col-3 mb-3">
-                                  <div class="p-2" style="background-color: #f0f0f0;">
+                                  <div class="p-2 bg-gray">
                                       <p class="text-center">{{ $material->name }}</p>
                                       <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
                                   </div>
