@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Image;
+use App\Material;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +16,8 @@ class MaterialController extends Controller
      */
     public function index()
     {
-	    return view('admin.material');
+    	$materials = Material::all();
+	    return view('admin.material.index')->with('materials', $materials);
     }
 
     /**
@@ -24,7 +27,7 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.material.create');
     }
 
     /**
@@ -35,7 +38,19 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token', 'image');
+        $request->flash();
+        $this->validate($request, ['name' => 'string|max:255|required']);
+        $image = Image::saveImage($request, 'materials');
+
+        $material = new Material();
+	    if ($image) {
+		    $material->image = $image;
+	    } else {
+		    return redirect()->route('admin.materials.create')->with('result', 'Выберите изображение');
+	    }
+	    $result = $material->fill($data)->save() ? 'Материал добавлен' : 'Ошибка';
+        return redirect()->route('admin.materials.index')->with('result', $result);
     }
 
     /**
@@ -57,7 +72,8 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        //
+        $material = Material::find($id);
+        return view('admin.material.edit')->with('material', $material);
     }
 
     /**
@@ -69,7 +85,20 @@ class MaterialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+	    $material = Material::find($id);
+	    $data = $request->except('_token', 'image');
+	    $request->flash();
+
+	    $this->validate($request, ['name' => 'string|max:255|required']);
+
+	    $image = Image::saveImage($request, 'materials');
+	    if ($image)	{
+		    Image::destroyImage($material->image);
+	    	$material->image = $image;
+	    }
+
+	    $result = $material->fill($data)->save() ? 'Материал добавлен' : 'Ошибка';
+	    return redirect()->route('admin.materials.index')->with('result', $result);
     }
 
     /**
@@ -80,6 +109,9 @@ class MaterialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $material = Material::find($id);
+	    Image::destroyImage($material->image);
+	    $result = Material::destroy($id) ? 'Материал удалён' : $result = 'Ошибка';
+        return redirect()->back()->with('result', $result);
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Image;
+use App\Making;
+use App\Repair;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,9 +15,14 @@ class MakingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Making $making)
     {
-	    return view('admin.making');
+	    $makings = $making->orderBy('id', 'desc')->select()->paginate(config('settings.makings_paginate'));
+	    foreach ($makings as $making) {
+		    $making->image = Image::getImage($making->id);
+	    }
+	    $paginate = view('partials.paginate')->with('items', $makings)->render();
+	    return view('admin.making.index')->with(['makings' => $makings, 'paginate' => $paginate]);
     }
 
     /**
@@ -24,7 +32,7 @@ class MakingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.making.create');
     }
 
     /**
@@ -35,7 +43,20 @@ class MakingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    	$data = $request->except('_token');
+
+    	$this->validate($request, [
+    		'name' => 'string|max:255|required'
+	    ]);
+
+	    $making = new Making();
+	    $result = $making->fill($data)->save();
+
+	    if ($result) {
+		    $result = Image::saveImages($request, 'makings', $making->id) ? 'Изделие добавлено' : 'Ошибка';
+	    }
+
+        return redirect()->route('admin.making.index')->with('result', $result);
     }
 
     /**
@@ -57,7 +78,9 @@ class MakingController extends Controller
      */
     public function edit($id)
     {
-        //
+	    $making = Making::find($id);
+	    $making->images = Image::getImages($id);
+        return view('admin.making.edit')->with('making', $making);
     }
 
     /**
@@ -69,7 +92,20 @@ class MakingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+	    $data = $request->except('_token');
+
+	    $this->validate($request, [
+		    'name' => 'string|max:255|required'
+	    ]);
+
+	    $making = Making::find($id);
+	    $result = $making->fill($data)->save();
+
+	    if ($result) {
+		    $result = Image::saveImages($request, 'makings', $making->id) ? 'Изменения сохранены' : 'Ошибка';
+	    }
+
+	    return redirect()->route('admin.making.index')->with('result', $result);
     }
 
     /**
@@ -81,5 +117,11 @@ class MakingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+	public function makingDeletImage(Request $request)
+	{
+		$result = Image::destroyImage($request->input('image')) ? 'Изображение удалено' : 'Ошибка';
+		return redirect()->back()->with('result', $result);
     }
 }

@@ -16,5 +16,10 @@
             <span class="custom-control-indicator"></span>
             <span class="custom-control-description text-white ">Запомнить</span>
         </label>
+        <a class="fr" href="{{ route('password.request') }}">
+            Забыли пароль?
+        </a>
     </form>
+@endsection
+@section('footer')
 @endsection

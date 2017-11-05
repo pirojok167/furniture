@@ -14,7 +14,12 @@
 @endif
 @yield('header')
 @yield('content')
-@include('partials.footer')
+@if(isset($paginate) && !empty($paginate))
+    {!! $paginate !!}
+@endif
+@section('footer')
+    @include('partials.footer')
+@show
 @include('template.scripts')
 </body>
 </html>

@@ -10,6 +10,16 @@
         <li class="btn"><a href="{{ route('making') }}">Изготовление</a></li>
     </ul>
     <h1>Ремонт и перетяжка мягкой мебели</h1>
+    @if(!$repairs->isEmpty())
+        @foreach($repairs as $repair)
+            <div style="background-color: #636b6f">
+                <img style="max-width: 200px" src="{{ asset("images/$repair->image_1") }}" alt="До">
+                <p>-></p>
+                <img style="max-width: 200px" src="{{ asset("images/$repair->image_2") }}" alt="После">
+            </div>
+            <br><br>
+        @endforeach
+    @endif
 @endsection
 @section('content')
 

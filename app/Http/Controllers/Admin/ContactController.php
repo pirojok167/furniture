@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,7 +11,8 @@ class ContactController extends Controller
 
     public function index()
     {
-        return view('admin.contacts');
+    	$contacts = Contact::first();
+        return view('admin.contacts')->with('contacts', $contacts);
     }
 
     public function create()
@@ -60,7 +62,27 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contacts = Contact::first();
+        if ($contacts == null) {
+	        $contacts = new Contact();
+        }
+		$data = $request->except('_token');
+
+        $this->validate($request, [
+        	'phone_1' => 'numeric|required',
+        	'phone_2' => 'numeric',
+	        'email' => 'email|required',
+        ]);
+
+		if ($data['phone_1'] !== $contacts->phone_1)
+			$contacts->phone_1 = $data['phone_1'];
+		if ($data['phone_2'] !== $contacts->phone_2)
+			$contacts->phone_2 = $data['phone_2'];
+		if ($data['email'] !== $contacts->email)
+			$contacts->email = $data['email'];
+
+	    $result = $contacts->save() ? 'Изменения сохранены' : 'Изменений не было';
+	    return redirect()->route('admin.contacts.index')->with('result', $result);
     }
 
     /**
