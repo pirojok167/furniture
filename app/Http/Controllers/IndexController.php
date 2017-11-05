@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Material;
 use App\Service;
 
 class IndexController extends Controller
@@ -18,7 +19,7 @@ class IndexController extends Controller
 	{
 		$this->services = Service::all();
 		$this->contacts = Contact::first();
-		$this->materials = Contact::all();
+		$this->materials = Material::all();
 	}
 
 	public function index()

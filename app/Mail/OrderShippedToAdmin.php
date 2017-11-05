@@ -33,6 +33,6 @@ class OrderShippedToAdmin extends Mailable
      */
     public function build()
     {
-        return $this->from(config('app.url'))->markdown('emails.orders.shipped_to_admin')->subject('Новая заявка');
+        return $this->markdown('emails.orders.shipped_to_admin')->subject('Новая заявка');
     }
 }
