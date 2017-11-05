@@ -1,47 +1,51 @@
 @extends('layouts.master')
 @section('header')
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler outline-n pointer" type="button" data-toggle="collapse" data-target="#navbarTogglerEx" aria-controls="navbarTogglerEx" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="container " style="position: relative;">
-                <a class="navbar-brand ml-auto ml-lg-0" href="/">ЛОГО</a>
-                <div class="collapse navbar-collapse" id="navbarTogglerEx">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Услуги<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Материалы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Как заказать</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Как заказать</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Оставить заявку</a>
-                        </li>
-                    </ul>
-                    <a class="btn" href="{{ route('repair') }}">Наши работы</a>
+    <nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
+        <button style="position: absolute;left: 16px;top:8px;" class="navbar-toggler outline-n pointer" type="button" data-toggle="collapse" data-target="#navbarTogglerEx" aria-controls="navbarTogglerEx" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container " >
+            <a class="navbar-brand ml-auto ml-lg-0" href="/">ЛОГО</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerEx">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Услуги<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Материалы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Как заказать</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Как заказать</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Оставить заявку</a>
+                    </li>
+                </ul>
+                <a class="btn btn-info ml-3" href="{{ route('repair') }}">Наши работы</a>
+                <div class="ml-auto">
+                    <p class="m-0">8-919-246-83-18</p>
+                    <p class="m-0">8-919-246-83-18</p>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 @endsection
 @section('content')
-    <div class="container-fluid" style="background-color: #f9f9f9;">
+    <div class="container-fluid bg-wrapper">
         <div class="container">
-            <h2 class="text-center">Перетяжка и изготовление мягкой мебели в Воронеже</h2>
+            <h2 class="text-center mb-5" style="font-family: 'Alice', serif;">Перетяжка и изготовление мягкой мебели в Воронеже</h2>
             <div class="row">
-                <div class="col">
+                <div class="col" style="font-size: 22px">
                     Перетяжка мягкой мебели: диваны, кресла,
                     кухонные уголки, офисная мебель, стулья, пуфики. Замена: обивочной ткани, поролона, искусственного наполнителя                   (холлофайбер и поролоновая крошка), пружинных блоков и механизмов трансформации. Ремонт каркаса.
                 </div>
                 <div class="col">
-                    <img class="img" src="" alt="">
+                    <img class="img" src="../images/templates/sofa.png" alt="">
                 </div>
-                <div class="col-12 d-flex">
+                <div class="col-12 d-flex mt-4">
                     <a class="btn btn-danger ml-auto" href="">
                         Посмотреть наши работы
                     </a>
@@ -50,52 +54,87 @@
                     </a>
                 </div>
             </div>
-            <h1 class="text-center">Наши работы</h1>
-            <div class="row">
-                <div class="col-6 bg-light">
-                    <img class="w-100" src="" alt="">
-                    <p>Перетяжка мягкой мебели</p>
-                </div>
-                <div class="col-6 bg-light">
-                    <img class="w-100" src="" alt="">
-                    <p>Ремонт каркаса, замена механизмов  трансформации</p>
-                </div>
-                <div class="col-6 bg-light">
-                    <img class="w-100" src="" alt="">
-                    <p>Ремонт каркаса, замена механизмов  трансформации</p>
-                </div>
-                <div class="col-6 bg-light">
-                    <img class="w-100" src="" alt="">
-                    <p>Ремонт каркаса, замена механизмов  трансформации</p>
-                </div>
-            </div>
-            <h1 class="text-center">Материалы которые мы используем</h1>
-            <div>
-                <p>sdvds sdv sdv sdv svd sdfbhgd bs dhdh sdh dsfh hsdfh dfh dfh dfh dfhah</p>
-                <img src="" alt="">
-                <a class="btn btn-danger"  href="{{ route('repair') }}">Посмотреть наши работы</a>
-                <a href="#order">Оставить заявку</a>
-            </div>
             <div id="services">
-                <h2>Наши услуги</h2>
-                @foreach($services as $service)
-                    <div>
-                        <h3>{{ $service->name }}</h3>
-                        <p>{{ $service->description }}</p>
-                        <img style="max-width:500px;" src="{{ asset("images/$service->image") }}">
-                    </div>
-                @endforeach
+                <div class="text-center mt-5 mb-4">
+                    <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Наши услуги</h2>
+                </div>
+                <div class="row">
+                    @foreach($services as $service)
+                        <div class="col-6 mb-3 services-block">
+                            <div class="w-100 p-2" style="background-color: #f0f0f0;">
+                                <div class="services-overflow">
+                                    <img class="w-100" style="height: 400px;object-fit: cover" src="{{ asset("images/$service->image") }}">
+                                    <div class="services-overflow-img-layer"></div>
+                                    <div class="pl-2 pb-2 pr-2 services-overflow-decs">{{ $service->description }}</div>
+                                </div>
+                                <p class="pt-2 text-center">{{ $service->name }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
             <div id="materials">
-                <h2>Матералы, которые мы используем</h2>
-                <div>
-                    Прямоугольник
+                <div class="text-center mt-5 mb-4">
+                    <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
+                </div>
+                <div class="row">
+                    @foreach($materials as $material)
+                        <div class="col-3 mb-3">
+                            <div class="p-2" style="background-color: #f0f0f0;">
+                                <p class="text-center">{{ $material->name }}</p>
+                                <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                Button with data-target
+                            </button>
+                        </div>
+                        <div class="collapse" id="collapse1">
+                          <div class="row">
+                              <div class="col-3 mb-3">
+                                  <div class="p-2" style="background-color: #f0f0f0;">
+                                      <p class="text-center">{{ $material->name }}</p>
+                                      <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-            <div>
-                <h2>Как мы выполняем ваш заказ</h2>
-                <div>
-                    Круглешок
+            <div id="order" class="mb-5">
+                <div class="text-center mt-5 mb-4">
+                    <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Как мы выполняем Ваш заказ</h2>
+                </div>
+                <div class="row">
+                    <div class="ml-auto col-2">
+                        <p class="text-center">Шаг 1.</p>
+                        <img class="w-100" src="../images/templates/circle_1.png" alt="">
+                        <div class="text-center mt-2" >Позвоните нам или оставьте заявку и мы свяжемся с вами
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <p class="text-center">Шаг 2.</p>
+                        <img class="w-100" src="../images/templates/circle_2.png" alt="">
+                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами</div>
+                    </div>
+                    <div class="col-2">
+                        <p class="text-center">Шаг 3.</p>
+                        <img class="w-100" src="../images/templates/circle_3.png" alt="">
+                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами</div>
+                    </div>
+                    <div class="col-2">
+                        <p class="text-center">Шаг 4.</p>
+                        <img class="w-100" src="../images/templates/circle_4.png" alt="">
+                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами
+                        </div>
+                    </div>
+                    <div class="col-2 mr-auto">
+                        <p class="text-center">Шаг 5.</p>
+                        <img class="w-100" src="../images/templates/circle_5.png" alt="">
+                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами</div>
+                    </div>
                 </div>
             </div>
         </div>
