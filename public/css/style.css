@@ -5,6 +5,9 @@
 .pointer {
   cursor: pointer; }
 
+.bg-gray {
+  background-color: #f0f0f0; }
+
 .img {
   object-fit: cover;
   width: 100%;

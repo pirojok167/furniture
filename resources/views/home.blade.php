@@ -61,7 +61,7 @@
                 <div class="row">
                     @foreach($services as $service)
                         <div class="col-6 mb-3 services-block">
-                            <div class="w-100 p-2" style="background-color: #f0f0f0;">
+                            <div class="w-100 p-2 bg-gray">
                                 <div class="services-overflow">
                                     <img class="w-100" style="height: 400px;object-fit: cover" src="{{ asset("images/$service->image") }}">
                                     <div class="services-overflow-img-layer"></div>
@@ -78,6 +78,7 @@
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
                 </div>
                 <div class="row">
+<<<<<<< HEAD
                     {{--{{ dd($materials_chunk[0]) }}--}}
                     @foreach($materials_chunk as $k => $materials)
                         @if($k === 0)
@@ -107,6 +108,13 @@
                                     @endif
                                 @endforeach
                             @endforeach
+=======
+                    @foreach($materials as $material)
+                        <div class="col-3 mb-3">
+                            <div class="p-2 bg-gray">
+                                <p class="text-center">{{ $material->name }}</p>
+                                <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
+>>>>>>> 4a22cc8a730b345222b86197d9676c44cd6255b7
                             </div>
                         </div>
                     @endif
@@ -116,7 +124,21 @@
                                 Button with data-target
                             </button>
                         </div>
+<<<<<<< HEAD
                     @endif
+=======
+                        <div class="collapse" id="collapse1">
+                          <div class="row">
+                              <div class="col-3 mb-3">
+                                  <div class="p-2 bg-gray">
+                                      <p class="text-center">{{ $material->name }}</p>
+                                      <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    @endforeach
+>>>>>>> 4a22cc8a730b345222b86197d9676c44cd6255b7
                 </div>
             </div>
             <div id="order" class="mb-5">
