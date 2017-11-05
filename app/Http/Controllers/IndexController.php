@@ -25,6 +25,6 @@ class IndexController extends Controller
 
 	public function index()
 	{
-		return view('home')->with('services', $this->services);
+		return view('home')->with(['services' => $this->services, 'contacts' => $this->contacts]);
 	}
 }

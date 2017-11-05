@@ -15,6 +15,6 @@ class OrderController extends Controller
 		
 		$order = new Order();
 		$result = $order->fill($data)->save() ? 'Ваша заявка принята' : 'Ошибка';
-		return redirect()->back()->with('result', $result);
+		return redirect()->back()->with(['result' => $result, 'contacts' => $this->contacts]);
     }
 }
