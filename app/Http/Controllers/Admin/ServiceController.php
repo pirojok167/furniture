@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Image;
 use App\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,8 +39,9 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
 	    $data = Service::validate($request);
+	    $request->flash();
 
-	    $image = Service::saveImage($request);
+	    $image = Image::saveImage($request,'services');
 	    $data['image'] = $image;
 
         $service = new Service();
@@ -66,7 +68,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Service::find($id);
+        return view('admin.services.edit')->with('service', $service);
     }
 
     /**
@@ -78,7 +81,23 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+	    $service = Service::find($id);
+	    $data = Service::validate($request);
+
+	    $image = Image::saveImage($request, 'services');
+		if ($image) {
+			Image::destroyImage($service->image);
+		}
+	    $data['image'] = $image ?? $service->image;
+
+	    if ($data['name'] !== $service->name
+		    || $data['description'] !== $service->description
+		    || $image !== $service->image) {
+		    $result = $service->fill($data)->save() ? 'Услуга добавлена' : 'Ошибка';
+	    } else {
+	    	$result = 'Нет изменений';
+	    }
+	    return redirect()->route('admin.services.index')->with('result', $result);
     }
 
     /**
@@ -89,6 +108,9 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+	    $service = Service::find($id);
+	    Service::destroyImage($service->image);
+	    $result = $service->delete() ? 'Запись удалена' : 'Ошибка';
+	    return redirect()->route('admin.services.index')->with('result', $result);
     }
 }

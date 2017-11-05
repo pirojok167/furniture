@@ -12,5 +12,10 @@
     <h1>Изготовление мягкой мебели</h1>
 @endsection
 @section('content')
-
+    @if(!$makings->isEmpty())
+        @foreach($makings as $making)
+            <p>{{ $making->name }}</p>
+            <img style="max-width: 500px" src="{{ asset("images/$making->image") }}" alt="{{ $making->name }}">
+        @endforeach
+    @endif
 @endsection

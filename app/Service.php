@@ -23,17 +23,5 @@ class Service extends Model
 		return $data;
     }
 
-    public static function saveImage($request) {
-	    if($request->hasFile('image')) {
-		    $file = $request->file('image');
-		    $validator = \Validator::make($request->all(), [
-			    'image' => 'image'
-		    ]);
 
-		    if ($validator->fails()) return false;
-		    $image = \Storage::disk('images')->put('services', $file);
-		    return $image;
-	    }
-	    return false;
-    }
 }
