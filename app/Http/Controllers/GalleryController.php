@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Image;
 use App\Making;
 use App\Repair;
@@ -11,7 +12,7 @@ class GalleryController extends Controller
 {
 	public function __construct()
 	{
-
+		$this->contacts = Contact::first();
 	}
 
 	public function making(Making $making)
