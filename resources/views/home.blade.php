@@ -54,7 +54,7 @@
                     </a>
                 </div>
             </div>
-            <div id="services">
+            <div class="post" id="services">
                 <div class="text-center mt-5 mb-4">
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Наши услуги</h2>
                 </div>
@@ -67,13 +67,13 @@
                                     <div class="services-overflow-img-layer"></div>
                                     <div class="pl-2 pb-2 pr-2 services-overflow-decs">{{ $service->description }}</div>
                                 </div>
-                                <p class="pt-2 text-center">{{ $service->name }}</p>
+                                <p class="pt-2 mb-1 text-center">{{ $service->name }}</p>
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
-            <div id="materials">
+            <div class="post" id="materials">
                 <div class="text-center mt-5 mb-4">
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
                 </div>
@@ -82,25 +82,35 @@
                         @if($k === 0)
                             @foreach($materials as $material)
                                 <div class="col-3 mb-3">
-                                    <div class="p-2" style="background-color: #f0f0f0;">
-                                        <p class="text-center">{{ $material->name }}</p>
-                                        <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
+                                    <div class="p-2" style="background-color: #f0f0f0;border-radius: 2px">
+                                        <p class="text-center mb-2">{{ $material->name }}</p>
+                                        <div class="img-materials" style="position: relative">
+                                            <img class="w-100 " style="height: 194px;object-fit: cover;border-radius: 2px" src="{{ asset("images/$material->image") }}">
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
                         @endif
                     @endforeach
                     @if(count($materials_chunk) >= 2)
-                        <div class="collapse" id="collapse1">
+                        <div class="collapse" style="padding-left: 15px;padding-right: 15px" id="collapse1">
                             <div class="row">
                                 @foreach($materials_chunk as $k => $materials)
                                     @foreach($materials as $material)
                                         @if($k > 0)
                                             <div class="col-3 mb-3">
                                                 <div class="p-2" style="background-color: #f0f0f0;">
+<<<<<<< HEAD
                                                     <p class="text-center">{{ $material->name }}</p>
                                                     <img class="w-100" style="height: 194px;object-fit: cover"
                                                          src="{{ asset("images/$material->image") }}">
+=======
+                                                    <p class="text-center mb-2">{{ $material->name }}</p>
+                                                    <div class="img-materials" style="position: relative">
+                                                        <img class="w-100" style="height: 194px;object-fit: cover"
+                                                             src="{{ asset("images/$material->image") }}">
+                                                    </div>
+>>>>>>> 7d140afaff314af36daa99e3ae63e24c5fca4601
                                                 </div>
                                             </div>
                                         @endif
@@ -110,16 +120,16 @@
                         </div>
                     @endif
                     @if(count($materials_chunk) >= 2)
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                Button with data-target
+                        <div class="col-12 d-flex">
+                            <button class="mx-auto border-0 pointer collapsed show-more-material" style="background-color: transparent;outline: none" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                <img class="icon icons8-Развернуть" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABv0lEQVRoQ+3YP0vEMBjH8e+BoC9NJ3ETQXFRF910dHLUTRd1EQVxEyd9aQqCkqMHMeZ/8oRwpNO116b9PL88bemMJVlmS+JgQHpLciQyEhGqwJhaQoXNHnYkkl06oQNHIkKFzR7WTGQFeALegJfsUWUP3AY2gV3ge3EqHbIKvAIbwA+w0yFGIZ5h/o74DmwBXwqjQ9YmyPqk7A2jI9QlfkyQTxOi1m2YfeBRdrYER98DHrTC/0HYID1igggXpCdMFMIH6QETjQhBXJgj4D44q8t2OABufT1hDh/zZLfdACQxyYiYRBZwE6O2HwokoxB3WrX/3Z1cQcck0gqTjUhJxIc5AW7KWoJj4DonCdsrSuy12KZZCaYYkZNI7WSqIEogtluz2paSTDVEKcSFOQOuAvP0FLgs6Ymc50iod2w948NUR9RIxNczNowIoiYkZpqJIWpDXJjzKbaLmj0h0SPmmLae0feJfu0INaf+f8orSsq4LowIQmJq6VgTI4aQhug9o36rLx7zDwUSi9TUMpNR62KIFolIFN86ZotEmmAGpEmZE04yEkkoVpNdRyJNypxwkpFIQrGa7DoSaVLmhJP8AosydjMRIKnxAAAAAElFTkSuQmCC">
                             </button>
                         </div>
                     @endif
                 </div>
             </div>
-            <div id="order" class="mb-5">
-                <div class="text-center mt-5 mb-4">
+            <div class="post pb-5" id="order" class="pb-5">
+                <div class="text-center mt-4 mb-4">
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Как мы выполняем Ваш заказ</h2>
                 </div>
                 <div class="row">

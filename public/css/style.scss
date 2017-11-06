@@ -4,7 +4,18 @@
 .pointer{
   cursor: pointer;
 }
-
+.show-more-material{
+  img{
+    transition: .3s;
+    transform: rotate(180deg);
+  }
+}
+.show-more-material.collapsed{
+  img{
+    transition: .3s;
+    transform: rotate(0deg)!important;
+  }
+}
 .bg-gray{
   background-color: #f0f0f0;
 }
@@ -72,8 +83,9 @@ footer{
   position: relative;
   &::after{
     content: '';
-    position: absolute; /* Абсолютное позиционирование */
-    border: 21px solid transparent;	border-right:21px solid #fbfbfb;
+    position: absolute;
+    border: 21px solid transparent;
+    border-right:21px solid #fbfbfb;
     right: 0;
   }
   &::before{
@@ -84,34 +96,34 @@ footer{
     left: 0;
   }
 }
-
+.hidden{
+  opacity:0;
+}
+.visible{
+  opacity:1;
+}
 body{
   font-family: 'PT Sans', sans-serif!important;
 }
-//@media (max-width: 575px) {
-//  .fr-xs{
-//    float:right!important;
-//  }
-//}
-//@media (min-width: 576px) and (max-width: 767px) {
-//  .fr-sm{
-//    float:right!important;
-//  }
-//}
-//
-//@media (min-width: 768px) and (max-width: 991px) {
-//  .fr-md{
-//    float:right!important;
-//  }
-//}
-//@media (min-width: 992px) and (max-width: 1199px) {
-//  .fr-lg{
-//    float:right!important;
-//  }
-//}
-//
-//@media (min-width: 1200px) {
-//  .fr-xl{
-//    float:right!important;
-//  }
-//}
+.img-materials{
+  position: relative;
+  overflow: hidden;
+  &::before{
+    content: '';
+    background: rgba(255, 255, 255, 0.1);
+    height: 30px;
+width: 400px;
+    top:-30px;
+    transition: .3s;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: -200px;
+    z-index: 999999;
+  }
+  &:hover{
+    &::before{
+      top:70%;
+      left:100px;
+    }
+  }
+}

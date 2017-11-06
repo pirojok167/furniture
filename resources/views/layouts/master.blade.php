@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @include('template.includes')
     <title>Перетяжка и изготовление мягкой мебели в Воронеже</title>
-</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script></head>
 <body>
 @if(Auth::user())
     <a href="/admin">Админка</a>
