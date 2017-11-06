@@ -9,19 +9,16 @@
             <div class="collapse navbar-collapse" id="navbarTogglerEx">
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Услуги<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#services">Услуги<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Материалы</a>
+                        <a class="nav-link" href="#materials">Материалы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Как заказать</a>
+                        <a class="nav-link" href="#order">Как заказать</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Как заказать</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Оставить заявку</a>
+                        <a class="nav-link" href="#footer">Оставить заявку</a>
                     </li>
                 </ul>
                 <a class="btn btn-info ml-3" href="{{ route('repair') }}">Наши работы</a>
@@ -77,7 +74,7 @@
                 <div class="text-center mt-5 mb-4">
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
                 </div>
-                <div class="row">
+                <div class="row mt-5 mb-5">
                     @foreach($materials_chunk as $k => $materials)
                         @if($k === 0)
                             @foreach($materials as $material)
@@ -126,7 +123,7 @@
                 <div class="text-center mt-4 mb-4">
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Как мы выполняем Ваш заказ</h2>
                 </div>
-                <div class="row">
+                <div class="row mt-5 mb-5">
                     <div class="ml-auto col-2">
                         <p class="text-center">Шаг 1.</p>
                         <img class="w-100" src="../images/templates/circle_1.png" alt="">

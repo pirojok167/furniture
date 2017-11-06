@@ -96,6 +96,10 @@ footer{
     left: 0;
   }
 }
+.nav-link.active{
+  background-color: #fff;
+  transition: .3s;
+}
 .hidden{
   opacity:0;
 }

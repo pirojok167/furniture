@@ -1,13 +1,13 @@
-<footer>
+<footer id="footer">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class="text-center mt-4 mb-4">Оствьте заявку на ремонт, и мы свяжемся с вами в ближйшее время.</p>
+                <h4 class="text-center mt-5 mb-5">Оствьте заявку на ремонт, и мы свяжемся с вами в ближйшее время.</h4>
             </div>
             <div class="col-6">
-                <p class="mb-2">Контакты:</p>
-                <p class="mb-1">89594986165</p>
-                <p>89594986165</p>
+                <b class="mb-2">Контакты:</b>
+                {{--<p class="mb-1">{{ $contacts->phone_1 }}</p>--}}
+                {{--<p>{{ $contacts->phone_2 }}</p>--}}
                 @if (count($errors) > 0)
                     @foreach ($errors->all() as $error)
                         {{ $error }}'
@@ -28,32 +28,28 @@
                     </a>
                 </p>
                 <div class="clearfix"></div>
-                <p>Email: <small>danil54658798@gmail.com</small></p>
+                <p><b>Email:</b> <small>danil54658798@gmail.com</small></p>
             </div>
             <div class="col-6">
                 <form action="{{ route('sendOrder') }}" method="post">
                     {{ csrf_field() }}
-                    <div class="row">
-                        <div class="col-12 form-group">
-                            <div class="row">
-                                <div class="col-6">
+
+                        <div class="form-group">
                                     <input class="form-control" type="text" name="name" value="{{ old('name') ?? '' }}" placeholder="Имя">
-                                </div>
-                            </div>
                         </div>
-                        <div class="col-6 form-group">
+                        <div class="form-group">
                             <input class="form-control" type="text" name="phone" value="{{ old('phone') ?? '' }}" placeholder="Телефон">
                         </div>
-                        <div class="col-6 form-group">
+                        <div class="form-group">
                             <input class="form-control" type="email" name="email" value="{{ old('email') ?? '' }}" placeholder="E-mail">
                         </div>
-                        <div class="col-12 form-group">
+                        <div class="form-group">
                             <textarea class="form-control" placeholder="Комментарий" name="comment" id="" rows="6">{{ old('comment') ?? ''                              }}</textarea>
                         </div>
-                        <div class="col-12 form-group d-flex">
+                        <div class="form-group d-flex">
                             <input class="pointer btn btn-light ml-auto" type="submit" value="Отправить">
                         </div>
-                    </div>
+
                 </form>
             </div>
             <div class="col-12 text-center p-2">
