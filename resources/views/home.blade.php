@@ -97,11 +97,17 @@
                                         @if($k > 0)
                                             <div class="col-3 mb-3">
                                                 <div class="p-2" style="background-color: #f0f0f0;">
+<<<<<<< HEAD
+                                                    <p class="text-center">{{ $material->name }}</p>
+                                                    <img class="w-100" style="height: 194px;object-fit: cover"
+                                                         src="{{ asset("images/$material->image") }}">
+=======
                                                     <p class="text-center mb-2">{{ $material->name }}</p>
                                                     <div class="img-materials" style="position: relative">
                                                         <img class="w-100" style="height: 194px;object-fit: cover"
                                                              src="{{ asset("images/$material->image") }}">
                                                     </div>
+>>>>>>> 7d140afaff314af36daa99e3ae63e24c5fca4601
                                                 </div>
                                             </div>
                                         @endif

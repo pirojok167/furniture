@@ -112,7 +112,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
 	    $service = Service::find($id);
-	    Service::destroyImage($service->image);
+	    Image::destroyImage($service->image);
 	    $result = $service->delete() ? 'Запись удалена' : 'Ошибка';
 	    return redirect()->route('admin.services.index')->with('result', $result);
     }

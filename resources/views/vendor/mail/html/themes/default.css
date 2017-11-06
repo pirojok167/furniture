@@ -26,11 +26,12 @@ ul,
 ol,
 blockquote {
     line-height: 1.4;
-    text-align: left;
+    text-align: center;
 }
 
 a {
-    color: #3869D4;
+    color: #3e4c3f;
+    text-align: center;
 }
 
 a img {
@@ -40,27 +41,27 @@ a img {
 /* Typography */
 
 h1 {
-    color: #2F3133;
+    color: #3e4c3f;
     font-size: 19px;
     font-weight: bold;
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 
 h2 {
-    color: #2F3133;
+    color: #3e4c3f;
     font-size: 16px;
     font-weight: bold;
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 
 h3 {
-    color: #2F3133;
+    color: #3e4c3f;
     font-size: 14px;
     font-weight: bold;
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 
 p {
@@ -118,7 +119,8 @@ img {
 /* Body */
 
 .body {
-    background-color: #FFFFFF;
+    background-image: url("http://furniture/images/templates/emails_bg.png");
+    /*background-color: #FFFFFF;*/
     border-bottom: 1px solid #EDEFF2;
     border-top: 1px solid #EDEFF2;
     margin: 0;
@@ -283,5 +285,5 @@ img {
 
 .promotion p {
     font-size: 15px;
-    text-align: center;
+    text-align: left;
 }
