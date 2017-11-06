@@ -78,8 +78,6 @@
                     <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
                 </div>
                 <div class="row">
-<<<<<<< HEAD
-                    {{--{{ dd($materials_chunk[0]) }}--}}
                     @foreach($materials_chunk as $k => $materials)
                         @if($k === 0)
                             @foreach($materials as $material)
@@ -95,26 +93,19 @@
                     @if(count($materials_chunk) >= 2)
                         <div class="collapse" id="collapse1">
                             <div class="row">
-                            @foreach($materials_chunk as $k => $materials)
-                                @foreach($materials as $material)
-                                    @if($k > 0)
-                                        <div class="col-3 mb-3">
-                                            <div class="p-2" style="background-color: #f0f0f0;">
-                                                <p class="text-center">{{ $material->name }}</p>
-                                                <img class="w-100" style="height: 194px;object-fit: cover"
-                                                     src="{{ asset("images/$material->image") }}">
+                                @foreach($materials_chunk as $k => $materials)
+                                    @foreach($materials as $material)
+                                        @if($k > 0)
+                                            <div class="col-3 mb-3">
+                                                <div class="p-2" style="background-color: #f0f0f0;">
+                                                    <p class="text-center">{{ $material->name }}</p>
+                                                    <img class="w-100" style="height: 194px;object-fit: cover"
+                                                         src="{{ asset("images/$material->image") }}">
+                                                </div>
                                             </div>
-                                        </div>
-                                    @endif
+                                        @endif
+                                    @endforeach
                                 @endforeach
-                            @endforeach
-=======
-                    @foreach($materials as $material)
-                        <div class="col-3 mb-3">
-                            <div class="p-2 bg-gray">
-                                <p class="text-center">{{ $material->name }}</p>
-                                <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
->>>>>>> 4a22cc8a730b345222b86197d9676c44cd6255b7
                             </div>
                         </div>
                     @endif
@@ -124,21 +115,7 @@
                                 Button with data-target
                             </button>
                         </div>
-<<<<<<< HEAD
                     @endif
-=======
-                        <div class="collapse" id="collapse1">
-                          <div class="row">
-                              <div class="col-3 mb-3">
-                                  <div class="p-2 bg-gray">
-                                      <p class="text-center">{{ $material->name }}</p>
-                                      <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image") }}">
-                                  </div>
-                              </div>
-                          </div>
-                        </div>
-                    @endforeach
->>>>>>> 4a22cc8a730b345222b86197d9676c44cd6255b7
                 </div>
             </div>
             <div id="order" class="mb-5">

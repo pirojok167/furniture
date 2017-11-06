@@ -33,4 +33,10 @@ class GalleryController extends Controller
 		$paginate = view('partials.paginate')->with('items', $repairs)->render();
 		return view('repair')->with(['repairs' => $repairs, 'paginate' => $paginate, 'contacts' => $this->contacts]);
     }
+
+	public function getMakingImages($id)
+	{
+		$images = Image::getImages($id);
+		return json_encode($images);
+    }
 }

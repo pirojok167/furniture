@@ -1,10 +1,22 @@
 @component('mail::message')
-# Introduction
+# У Вас новая заявка
+<br>
+Данные пользователя:
+@component('mail::panel')
+Имя: {{ $user_data['name'] }}
+<br><br>
+Телефон: {{ $user_data['phone'] }}
+<br><br>
+Email: {{ $user_data['email'] }}
+<br><br>
+Комментарий:
+<br>
+{{ $user_data['comment'] ?? '' }}
+<br>
+@endcomponent
 
-The body of your message.
-
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => route('admin.orders'), 'color' => 'green'])
+Перейти к заявкам
 @endcomponent
 
 <a href="{{ route('home') }}">Перетяжка и изготовление мягкой мебели в Воронеже</a>

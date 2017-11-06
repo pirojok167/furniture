@@ -4,6 +4,7 @@
 Route::get('/', ['uses' => 'IndexController@index','as' => 'home']);
 Route::get('/repair', ['uses' => 'GalleryController@repair','as' => 'repair']);
 Route::get('/making', ['uses' => 'GalleryController@making','as' => 'making']);
+Route::get('/get-making-images/{id}', ['uses' => 'GalleryController@getMakingImages','as' => 'getMakingImages']);
 Route::post('order', ['uses' => 'OrderController@sendOrder', 'as' => 'sendOrder']);
 
 // Login
@@ -17,8 +18,6 @@ Route::post('password/reset','\Auth\ForgotPasswordController@reset');
 Route::get('password/reset/{token}', [
 	'uses' => '\Auth\ForgotPasswordController@showResetForm', 'as' => 'password.reset'
 ]);
-
-
 
 // Admin
 Route::group([

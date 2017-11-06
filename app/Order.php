@@ -28,12 +28,13 @@ class Order extends Model
 		return $data;
     }
 
-	public static function send($user_data)
+	public static function send($user_data, $order_id, $contacts)
 	{
 		$admin = Contact::first();
 
-		$result_1 = \Mail::to($admin->email)->send(new OrderShippedToAdmin($user_data, $admin->email));
-		$result_2 = \Mail::to($user_data['email'])->send(new OrderShippedToClient($user_data, $admin->email));
+		$result_1 = \Mail::to($admin->email)->send(new OrderShippedToAdmin($user_data, $admin->email, $order_id));
+		$result_2 = \Mail::to($user_data['email'])
+			->send(new OrderShippedToClient($user_data, $admin->email, $contacts));
 
 		if ($result_1 && $result_2)	return true;
 		return false;

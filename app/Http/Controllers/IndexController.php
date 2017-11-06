@@ -17,9 +17,9 @@ class IndexController extends Controller
 
 	public function __construct()
 	{
-		$this->services = Service::all();
+		$this->services = Service::select()->orderBy('id', 'desc')->get();
 		$this->contacts = Contact::first();
-		$this->materials = Material::all();
+		$this->materials = Material::select()->orderBy('id', 'desc')->get();
 	}
 
 	public function index()
