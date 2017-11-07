@@ -1,2 +1,11 @@
+#Ремонт и изготовление мягкой мебели в Воронеже
+
 User-agent: *
-Disallow:
+Disallow: /get-making-images
+Disallow: /order
+Disallow: /login
+Disallow: /logout
+Disallow: /password
+Disallow: /admin
+
+Sitemap: https://www.youtube.com/yt/advertise/sitemap.xml

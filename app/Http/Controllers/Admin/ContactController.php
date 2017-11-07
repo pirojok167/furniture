@@ -69,8 +69,8 @@ class ContactController extends Controller
 		$data = $request->except('_token');
 
         $this->validate($request, [
-        	'phone_1' => 'numeric|required',
-        	'phone_2' => 'numeric',
+        	'phone_1' => 'string|max:255|required',
+        	'phone_2' => 'string|max:255|',
 	        'email' => 'email|required',
         ]);
 

@@ -25,12 +25,11 @@
                 </ul>
                 <a class="btn btn-green btn-sm ml-3" href="{{ route('repair') }}">Наши работы</a>
                 <div class="ml-auto mr-2">
-                    <p class="m-0 text-white">Контакты:</p>
-                    <p class="m-0 text-white hidden">hidden</p>
+                    <p class="m-0 text-white" style="padding-bottom: 26px">Контакты:</p>
                 </div>
                 <div>
-                    <p class="m-0 text-white">8-919-246-83-18</p>
-                    <p class="m-0 text-white">8-919-246-83-18</p>
+                    <p class="m-0 text-white">{{ $contacts->phone_1 }}</p>
+                    <p class="m-0 text-white">{{ $contacts->phone_2 }}</p>
                 </div>
             </div>
         </div>
@@ -49,10 +48,10 @@
                     <img class="img" src="../images/templates/sofa.png" alt="">
                 </div>
                 <div class="col-12 d-flex mt-4">
-                    <a class="btn btn-green ml-auto" href="">
+                    <a class="btn btn-green ml-auto" href="{{ route('repair') }}">
                         Посмотреть наши работы
                     </a>
-                    <a class="btn btn-green-outline ml-3 mr-auto" href="">
+                    <a class="btn btn-green-outline ml-3 mr-auto" href="#footer">
                         Оставить заявку
                     </a>
                 </div>
@@ -133,29 +132,29 @@
                     <div class="ml-auto col-2">
                         <p class="text-center">Шаг 1.</p>
                         <img class="w-100" src="../images/templates/circle_1.png" alt="">
-                        <div class="text-center mt-2" >Позвоните нам или оставьте заявку и мы свяжемся с вами
+                        <div class="text-center mt-2" >Позвоните нам или оставьте заявку, и мы свяжемся с вами
                         </div>
                     </div>
                     <div class="col-2">
                         <p class="text-center">Шаг 2.</p>
                         <img class="w-100" src="../images/templates/circle_2.png" alt="">
-                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами</div>
+                        <div class="text-center mt-2">Произведём замеры</div>
                     </div>
                     <div class="col-2">
                         <p class="text-center">Шаг 3.</p>
                         <img class="w-100" src="../images/templates/circle_3.png" alt="">
-                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами</div>
+                        <div class="text-center mt-2">Определим стоимость работ и материалов</div>
                     </div>
                     <div class="col-2">
                         <p class="text-center">Шаг 4.</p>
                         <img class="w-100" src="../images/templates/circle_4.png" alt="">
-                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами
+                        <div class="text-center mt-2">Отремонтируем Ваш диван
                         </div>
                     </div>
                     <div class="col-2 mr-auto">
                         <p class="text-center">Шаг 5.</p>
                         <img class="w-100" src="../images/templates/circle_5.png" alt="">
-                        <div class="text-center mt-2">Позвоните нам или оставьте заявку и мы свяжемся с вами</div>
+                        <div class="text-center mt-2">Акт о приёмке выполненных работ и оплата</div>
                     </div>
                 </div>
             </div>
