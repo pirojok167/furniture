@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @include('template.includes')
     <title>Перетяжка и изготовление мягкой мебели в Воронеже</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
 <body data-spy="scroll" data-target="#header" data-offset="90">
 @if(Auth::user())
-    <a href="/admin">Админка</a>
+    <div class="container-fluid" style="background-color: #FFCF48;">
+        <div class="container">
+            <a class="text-dark" href="/admin">Админка</a>
+        </div>
+    </div>
 @endif
 @yield('header')
 @yield('content')
