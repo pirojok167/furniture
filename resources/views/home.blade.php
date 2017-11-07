@@ -1,30 +1,36 @@
 @extends('layouts.master')
 @section('header')
-    <nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="header" class="navbar navbar-expand-lg navbar-light bg-green">
         <button style="position: absolute;left: 16px;top:8px;" class="navbar-toggler outline-n pointer" type="button" data-toggle="collapse" data-target="#navbarTogglerEx" aria-controls="navbarTogglerEx" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="container " >
-            <a class="navbar-brand ml-auto ml-lg-0" href="/">ЛОГО</a>
+            <a class="navbar-brand ml-auto ml-lg-0" href="/">
+                <img  height="40" src="../images/templates/logo.png">
+            </a>
             <div class="collapse navbar-collapse" id="navbarTogglerEx">
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Услуги<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white"  href="#services">Услуги<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#materials">Материалы</a>
+                        <a class="nav-link"  href="#materials">Материалы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#order">Как заказать</a>
+                        <a class="nav-link text-white" href="#order">Как заказать</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#footer">Оставить заявку</a>
+                        <a class="nav-link text-white"  href="#footer">Оставить заявку</a>
                     </li>
                 </ul>
-                <a class="btn btn-info ml-3" href="{{ route('repair') }}">Наши работы</a>
-                <div class="ml-auto">
-                    <p class="m-0">8-919-246-83-18</p>
-                    <p class="m-0">8-919-246-83-18</p>
+                <a class="btn btn-green btn-sm ml-3" href="{{ route('repair') }}">Наши работы</a>
+                <div class="ml-auto mr-2">
+                    <p class="m-0 text-white">Контакты:</p>
+                    <p class="m-0 text-white hidden">hidden</p>
+                </div>
+                <div>
+                    <p class="m-0 text-white">8-919-246-83-18</p>
+                    <p class="m-0 text-white">8-919-246-83-18</p>
                 </div>
             </div>
         </div>
@@ -43,17 +49,17 @@
                     <img class="img" src="../images/templates/sofa.png" alt="">
                 </div>
                 <div class="col-12 d-flex mt-4">
-                    <a class="btn btn-danger ml-auto" href="">
+                    <a class="btn btn-green ml-auto" href="">
                         Посмотреть наши работы
                     </a>
-                    <a class="btn btn-outline-danger ml-3 mr-auto" href="">
+                    <a class="btn btn-green-outline ml-3 mr-auto" href="">
                         Оставить заявку
                     </a>
                 </div>
             </div>
             <div class="post" id="services">
                 <div class="text-center mt-5 mb-4">
-                    <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Наши услуги</h2>
+                    <h2 class="text-white special-title bg-green d-inline-block pb-1 pr-4 pl-4">Наши услуги</h2>
                 </div>
                 <div class="row">
                     @foreach($services as $service)
@@ -72,7 +78,7 @@
             </div>
             <div class="post" id="materials">
                 <div class="text-center mt-5 mb-4">
-                    <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
+                    <h2 class="text-white special-title bg-green d-inline-block pb-1 pr-4 pl-4">Материалы, которые мы используем</h2>
                 </div>
                 <div class="row mt-5 mb-5">
                     @foreach($materials_chunk as $k => $materials)
@@ -97,17 +103,11 @@
                                         @if($k > 0)
                                             <div class="col-3 mb-3">
                                                 <div class="p-2" style="background-color: #f0f0f0;">
-<<<<<<< HEAD
-                                                    <p class="text-center">{{ $material->name }}</p>
-                                                    <img class="w-100" style="height: 194px;object-fit: cover"
-                                                         src="{{ asset("images/$material->image") }}">
-=======
                                                     <p class="text-center mb-2">{{ $material->name }}</p>
                                                     <div class="img-materials" style="position: relative">
                                                         <img class="w-100" style="height: 194px;object-fit: cover"
                                                              src="{{ asset("images/$material->image") }}">
                                                     </div>
->>>>>>> 7d140afaff314af36daa99e3ae63e24c5fca4601
                                                 </div>
                                             </div>
                                         @endif
@@ -127,7 +127,7 @@
             </div>
             <div class="post pb-5" id="order" class="pb-5">
                 <div class="text-center mt-4 mb-4">
-                    <h2 class="text-white special-title bg-primary d-inline-block pb-1 pr-4 pl-4">Как мы выполняем Ваш заказ</h2>
+                    <h2 class="text-white special-title bg-green d-inline-block pb-1 pr-4 pl-4">Как мы выполняем Ваш заказ</h2>
                 </div>
                 <div class="row mt-5 mb-5">
                     <div class="ml-auto col-2">

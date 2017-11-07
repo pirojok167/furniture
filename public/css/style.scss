@@ -1,3 +1,22 @@
+@mixin buttonOutline($color,$bg){
+  &{color:$bg;background-image:none;background-color:transparent;border-color:$bg!important;box-shadow:-2px 2px 4px rgba(0,0,0,.35);}
+  &:hover{color:$color!important;background-color:$bg;border-color:$bg}
+  &.focus,&:focus{box-shadow: none!important;}
+}
+@mixin button($color,$bg){
+  &{color:$color;background-color:$bg;border-color:$bg;box-shadow:-2px 2px 4px rgba(0,0,0,.35);}
+  &:hover{color:$color!important;box-shadow: none!important;}
+  &.focus,&:focus{box-shadow: inset -2px 2px 4px rgba(0,0,0,.35)!important;}
+}
+.btn-green{
+  @include button(#fff,#465e0b);
+}
+.btn-green-outline{
+  @include buttonOutline(#fff,#465e0b);
+}
+.bg-green{
+  background-color: #91c318;
+}
 .outline-n{
   outline: none!important;
 }
@@ -85,20 +104,23 @@ footer{
     content: '';
     position: absolute;
     border: 21px solid transparent;
-    border-right:21px solid #fbfbfb;
+    border-right:10px solid #fbfbfb;
     right: 0;
   }
   &::before{
     content: '';
     position: absolute; /* Абсолютное позиционирование */
     border: 21px solid transparent;
-    border-left: 21px solid #fbfbfb;
+    border-left: 10px solid #fbfbfb;
     left: 0;
   }
 }
 .nav-link.active{
   background-color: #fff;
   transition: .3s;
+}
+.shadow{
+  box-shadow: -2px 2px 4px rgba(0,0,0,.35);
 }
 .hidden{
   opacity:0;
@@ -129,5 +151,11 @@ width: 400px;
       top:70%;
       left:100px;
     }
+  }
+}
+#header{
+  .nav-link{  border-radius: 2px;  color: white;  }
+  a.nav-link.active{
+    color: rgba(0,0,0,.5)!important;
   }
 }
