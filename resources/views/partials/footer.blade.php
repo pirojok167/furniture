@@ -13,6 +13,7 @@
             <div class="col-12">
                 <h4 class="text-center mt-5 mb-5">Оствьте заявку на ремонт, и мы свяжемся с вами в ближйшее время.</h4>
             </div>
+            @if(!empty($contacts))
             <div class="col-6 post-2">
                 <b class="mb-2">Контакты:</b>
                 <p class="mb-1">{{ $contacts->phone_1 }}</p>
@@ -39,6 +40,7 @@
                 <div class="clearfix"></div>
                 <p><b>Email:</b> <small>danil54658798@gmail.com</small></p>
             </div>
+            @endif
             <div class="col-6 post-3">
                 <form id="form-footer" action="{{ route('sendOrder') }}" method="post">
                     {{ csrf_field() }}
