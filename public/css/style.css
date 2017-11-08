@@ -58,6 +58,37 @@
   width: 100%;
   height: 100%; }
 
+.orange-to-purple {
+  background: linear-gradient(to right, #EDA316, #2A145A); }
+
+.bg-blur {
+  filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.btn-yellow-custom {
+  color: #fff;
+  background-color: #EDA316;
+  border-color: #EDA316;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.35); }
+.btn-yellow-custom:hover {
+  color: #fff !important;
+  box-shadow: none !important; }
+.btn-yellow-custom.focus, .btn-yellow-custom:focus {
+  box-shadow: inset -2px 2px 4px rgba(0, 0, 0, 0.35) !important; }
+
+.btn-yellow-outline-custom {
+  color: #EDA316;
+  background-image: none;
+  background-color: transparent;
+  border-color: #EDA316 !important;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.35); }
+.btn-yellow-outline-custom:hover {
+  color: #fff !important;
+  background-color: #EDA316;
+  border-color: #EDA316; }
+.btn-yellow-outline-custom.focus, .btn-yellow-outline-custom:focus {
+  box-shadow: none !important; }
+
 .bg-wrapper {
   background-image: url(../images/templates/cream_dust.png); }
 
@@ -159,5 +190,60 @@ body {
   color: white; }
 #header a.nav-link.active {
   color: rgba(0, 0, 0, 0.5) !important; }
+
+.layer-footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  display: none; }
+
+@-webkit-keyframes animate-circle {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0; } }
+@keyframes animate-circle {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0; } }
+.loader {
+  --size: 10rem;
+  height: var(--size);
+  width: var(--size); }
+
+.loader > .circle {
+  --duration: 2s;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background: #91c318;
+  border-radius: 50%;
+  -webkit-animation: animate-circle var(--duration) cubic-bezier(0.9, 0.24, 0.62, 0.79) infinite;
+  animation: animate-circle var(--duration) cubic-bezier(0.9, 0.24, 0.62, 0.79) infinite; }
+
+.loader > .circle:nth-of-type(1) {
+  -webkit-animation-delay: 0;
+  animation-delay: 0; }
+
+.loader > .circle:nth-of-type(2) {
+  -webkit-animation-delay: calc(var(--duration) / -3);
+  animation-delay: calc(var(--duration) / -3); }
+
+.loader > .circle:nth-of-type(3) {
+  -webkit-animation-delay: calc(var(--duration) / -6);
+  animation-delay: calc(var(--duration) / -6); }
 
 /*# sourceMappingURL=style.css.map */

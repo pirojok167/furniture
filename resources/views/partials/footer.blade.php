@@ -1,4 +1,13 @@
-<footer id="footer">
+<footer id="footer" style="position: relative">
+    <div class="layer-footer">
+        <div class="d-flex h-100 w-100 layer-footer-content">
+            <div class="loader m-auto">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -31,7 +40,7 @@
                 <p><b>Email:</b> <small>danil54658798@gmail.com</small></p>
             </div>
             <div class="col-6 post-3">
-                <form action="{{ route('sendOrder') }}" method="post">
+                <form id="form-footer" action="{{ route('sendOrder') }}" method="post">
                     {{ csrf_field() }}
 
                         <div class="form-group">
@@ -47,7 +56,7 @@
                             <textarea class="form-control" placeholder="Комментарий" name="comment" id="" rows="6">{{ old('comment') ?? ''                              }}</textarea>
                         </div>
                         <div class="form-group d-flex">
-                            <input class="pointer btn btn-light ml-auto" type="submit" value="Отправить">
+                            <input class="pointer btn-send-footer btn btn-light ml-auto" type="submit" value="Отправить">
                         </div>
 
                 </form>

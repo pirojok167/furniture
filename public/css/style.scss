@@ -53,6 +53,19 @@
   width: 100%;
   height: 100%;
 }
+.orange-to-purple{
+  background:linear-gradient(to right, #EDA316, #2A145A);;
+}
+.bg-blur{
+  filter:blur(5px);
+  background-color: rgba(0,0,0,.5);
+}
+.btn-yellow-custom{
+  @include button(#fff,#EDA316)
+}
+.btn-yellow-outline-custom{
+  @include buttonOutline(#fff,#EDA316)
+}
 .bg-wrapper{
   background-image: url(../images/templates/cream_dust.png);
 }
@@ -171,4 +184,76 @@ width: 400px;
   a.nav-link.active{
     color: rgba(0,0,0,.5)!important;
   }
+}
+.layer-footer{
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  display: none;
+}
+
+
+
+
+@-webkit-keyframes animate-circle {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes animate-circle {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.loader {
+  --size: 10rem;
+  height: var(--size);
+  width: var(--size);
+
+}
+
+.loader > .circle {
+  --duration: 2s;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background: #91c318;
+  border-radius: 50%;
+  -webkit-animation: animate-circle var(--duration) cubic-bezier(.9,.24,.62,.79) infinite;
+  animation: animate-circle var(--duration) cubic-bezier(.9,.24,.62,.79) infinite;
+}
+
+.loader > .circle:nth-of-type(1) {
+  -webkit-animation-delay: 0;
+  animation-delay: 0;
+}
+
+.loader > .circle:nth-of-type(2) {
+  -webkit-animation-delay: calc(var(--duration) / -3);
+  animation-delay: calc(var(--duration) / -3);
+}
+
+.loader > .circle:nth-of-type(3) {
+  -webkit-animation-delay: calc(var(--duration) / -6);
+  animation-delay: calc(var(--duration) / -6);
 }
