@@ -4,14 +4,14 @@ $(document).ready(function () {
         classToAdd: 'visible animated fadeIn',
         offset: 100
     });
-    $('.post-2').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated fadeInLeft',
-        offset: 100
-    });
-    $('.post-3').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated fadeInRight',
-        offset: 100
-    });
+    // $('.post-2').addClass("hidden").viewportChecker({
+    //     classToAdd: 'visible animated fadeInLeft',
+    //     offset: 100
+    // });
+    // $('.post-3').addClass("hidden").viewportChecker({
+    //     classToAdd: 'visible animated fadeInRight',
+    //     offset: 100
+    // });
     $(".btn-send-footer").on("click", function(e){
         e.preventDefault();
         $(".layer-footer").fadeIn(300,"linear");
@@ -23,9 +23,12 @@ $(document).ready(function () {
             data:data,
             success:function(data){
                 $(".loader").fadeOut(300,"linear", function(){
-                    $(".layer-footer-content").html("<h4 style='letter-spacing: 1px;display: none' class='m-auto thx-for-mail'>Спасибо за ваше письмо!</h4>");
+                    $(".layer-footer-content").append("<h4 style='letter-spacing: 1px;display: none' class='m-auto thx-for-mail'>Спасибо за ваше письмо!</h4>");
                     $(".thx-for-mail").fadeIn(300,"linear", function () {
-                        $(".layer-footer").fadeOut(1500,"linear");
+                        $(".layer-footer").fadeOut(1500,"linear", function () {
+                            $(".thx-for-mail").remove();
+                            $(".loader").show();
+                        });
                     });
                 });
             }

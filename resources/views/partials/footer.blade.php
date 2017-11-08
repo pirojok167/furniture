@@ -13,7 +13,7 @@
             <div class="col-12">
                 <h4 class="text-center mt-5 mb-5">Оствьте заявку на ремонт, и мы свяжемся с вами в ближйшее время.</h4>
             </div>
-            <div class="col-6 post-2">
+            <div class="col-6 post">
                 <b class="mb-2">Контакты:</b>
                 <p class="mb-1">{{ $contacts->phone_1 }}</p>
                 <p>{{ $contacts->phone_2 }}</p>
@@ -39,7 +39,7 @@
                 <div class="clearfix"></div>
                 <p><b>Email:</b> <small>danil54658798@gmail.com</small></p>
             </div>
-            <div class="col-6 post-3">
+            <div class="col-6 post">
                 <form id="form-footer" action="{{ route('sendOrder') }}" method="post">
                     {{ csrf_field() }}
 
