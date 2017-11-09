@@ -23,7 +23,8 @@ $(document).ready(function () {
             data:data,
             success:function(data){
                 $(".loader").fadeOut(300,"linear", function(){
-                    $(".layer-footer-content").append("<h4 style='letter-spacing: 1px;display: none' class='m-auto thx-for-mail'>Спасибо за ваше письмо!</h4>");
+                    $(".layer-footer-content").append("<h4 style='letter-spacing: 1px;display: none' class='m-auto thx-for-mail'>"+data+"</h4>");
+                    document.getElementById("form-footer").reset();
                     $(".thx-for-mail").fadeIn(300,"linear", function () {
                         $(".layer-footer").fadeOut(1500,"linear", function () {
                             $(".thx-for-mail").remove();
@@ -56,18 +57,18 @@ $(document).ready(function () {
     });
 
     var offs=$("#header").outerHeight()+21;
-    $(".nav-link").on("click", function(e){
+    $(".nav-link, .btn-order").on("click", function(e){
         elem=$(this);
         if(elem.attr("href")==="#services"){
-            $("body, html").animate({scrollTop: $("#services").offset().top-offs},400);
+            $("body, html").animate({scrollTop: $("#services").offset().top-offs},600,"easeInOutExpo");
             e.preventDefault();
         }
         else if(elem.attr("href")==="#materials"){
-            $("body, html").animate({scrollTop: $("#materials").offset().top-offs},400);
+            $("body, html").animate({scrollTop: $("#materials").offset().top-offs},600,"easeInOutExpo");
             e.preventDefault();
         }
         else if(elem.attr("href")==="#order"){
-            $("body, html").animate({scrollTop: $("#order").offset().top-offs},400);
+            $("body, html").animate({scrollTop: $("#order").offset().top-offs},600,"easeInOutExpo");
             e.preventDefault();
         }
         else if(elem.attr("href")==="#footer"){
@@ -78,8 +79,51 @@ $(document).ready(function () {
             else{
                 valS=$("#footer").offset().top-offs;
             }
-            $("body, html").animate({scrollTop: valS},400);
+            $("body, html").animate({scrollTop: valS},600,"easeInOutExpo");
             e.preventDefault();
         }
+    });
+    $(".btn-making-gallery").on("click", function(){
+        $(".og-loading").show();
+        if(!$(this).parent().hasClass("og-expanded")){
+            $(".gallery-content").html("");
+        }
+        var id=$(this).attr("id");
+        var name=$(this).attr("data-name");
+       $.get("/get-making-images/"+id, function(data){
+           $(".og-loading").hide();
+           var p=document.createElement("p");
+           p.innerHTML=name;
+           p.classList.add("big", "text-center");
+           $(".gallery-content").append(p);
+           var div=document.createElement("div");
+           div.classList.add("owl-carousel", "owl-theme","w-100","h-100");
+           div.style="position:relative";
+           $(".gallery-content").append(div);
+           var src=JSON.parse(data);
+           for(var i=0;i<src.length;i++){
+               var timeVar="../images/"+src[i];
+               var div2=document.createElement("div");
+               div2.classList.add("item");
+               $(".owl-carousel").append(div2);
+               var img=document.createElement("img");
+               img.src=timeVar;
+               img.style="height:100%;object-fit:cover;";
+               $(".item:nth-last-child(1)").append(img);
+           }
+           var loop;
+           if(src.length>1){
+               loop=true;
+           }
+           else if(src.length===1){
+               loop:false;
+           }
+           $('.owl-carousel').owlCarousel({
+               items:1,
+               loop:loop,
+               nav:true,
+               navText : ["",""]
+            });
+       });
     });
 });

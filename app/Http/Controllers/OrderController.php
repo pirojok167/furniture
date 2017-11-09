@@ -19,6 +19,6 @@ class OrderController extends Controller
 		$result = $order->fill($data)->save() ? 'Ваша заявка принята' : false;
 		if ($result) Order::send($data, $order->id, $contacts);
 
-		return redirect()->back()->with(['result' => $result, 'contacts' => $this->contacts]);
+		return $result;
     }
 }

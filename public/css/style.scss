@@ -195,6 +195,22 @@ width: 400px;
   z-index: 999999;
   display: none;
 }
+.big{
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.footer-input{
+  background-image: url(../images/templates/bg_footer.png)!important;
+  border: 1px solid white!important;
+  color: white!important;
+  box-shadow: none!important;
+}
+.bg{
+  background-image: url(../images/templates/bg2.png);
+}
+.item,.owl-item, .owl-stage, .owl-stage-outer{
+  height: 100%;
+}
 
 
 
