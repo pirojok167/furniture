@@ -1,3 +1,4 @@
+$(".phone").mask("+7 (999) 999-99-99");
 $(document).ready(function () {
     $('#header').scrollToFixed();
     $('.post').addClass("hidden").viewportChecker({
@@ -38,10 +39,17 @@ $(document).ready(function () {
     $(".forModal").on("click", function(){
         var src=$(this).attr("src");
         var img=document.createElement("img");
-        img.setAttribute("src", src);
-        img.setAttribute("id", "imgInModal");
-        img.setAttribute("style", "objectFit:cover");
+        img.src=src;
+        img.id="imgInModal";
+        img.style="objectFit:cover";
+        var cancel=document.createElement("img");
+        cancel.style="position: absolute; top: 10px; right: 10px";
+        cancel.classList.add("pointer", "icon", "icons8-Удалить");
+        cancel.width="32";
+        cancel.height="32";
+        cancel.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA9klEQVRYR+2W3Q3DIAyE45nweztKMlkzSgeAmaioioRIgDN1Qio1b5HM3Qf+kWka/NFg/+kPsHkBa+1KRE9jzKqZHufc7L2/MfOS6m4APoEPIlq0IGqauzWgCdHSKhZh6yCSHkSj2gWIQAkEPdtsQ1QoBZGcaQIEYYmgJDZoQwAohNRcBNCC6DEXA5Qges27AHKI8O+97x5ccA3k7RZv/b7FF1PzNwHSnJ+egr2CO60Ia0a9EHANIAZITF7MEIBEWBILzQGpYGtiil6gxzwaoGevuZCg9Bpb0fWW0oPX8jszz9W1HHlWzRhoDmgaitrwSOOoPfwFXhZ1YDCPsgJpAAAAAElFTkSuQmCC";
         $(".modal-content").append(img);
+        $(".modal-content").append(cancel);
         $("#modal").fadeIn(300,"linear");
         if($("#imgInModal").height()>document.documentElement.clientHeight-20){
             $("#imgInModal").height(document.documentElement.clientHeight-20);
@@ -84,14 +92,12 @@ $(document).ready(function () {
         }
     });
     $(".btn-making-gallery").on("click", function(){
-        $(".og-loading").show();
         if(!$(this).parent().hasClass("og-expanded")){
             $(".gallery-content").html("");
         }
         var id=$(this).attr("id");
         var name=$(this).attr("data-name");
        $.get("/get-making-images/"+id, function(data){
-           $(".og-loading").hide();
            var p=document.createElement("p");
            p.innerHTML=name;
            p.classList.add("big", "text-center","mt-3");

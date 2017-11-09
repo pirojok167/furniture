@@ -49,7 +49,7 @@
                                     <input class="form-control footer-input" type="text" name="name" placeholder="Имя">
                         </div>
                         <div class="form-group">
-                            <input class="form-control footer-input" type="text" name="phone" placeholder="Телефон">
+                            <input class="form-control footer-input phone" type="text" name="phone" placeholder="Телефон">
                         </div>
                         <div class="form-group">
                             <input class="form-control footer-input" type="email" name="email" placeholder="E-mail">

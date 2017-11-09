@@ -45,8 +45,7 @@
     <div id="modal">
 
         <div class="w-100 h-100 d-flex" style="position: relative;">
-            <img style="position: absolute; top: 20px; right: 20px" class="pointer icon icons8-Удалить" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABuklEQVRoQ+3Z0W2EMAwGYEdhgG7SQ4j3doNu0o7Qm6gj9AZAot2kAwRSpTokhAhJHP/keuIeEQQ+G3yxrOhOfupOHHRAbi2TR0b+VUa6rnvRWl/quv4p+eB93z+M4/jaNM3Z9xzeV8shiOjDWvtVVdVzKYxDGGM+lVIna+25bdv3NYwX4hYYhuFCRI+lMHMEEX1rrZ98Ad382EtiUhAuQ8GqVQKTioiCuJP2xHAQ0ZC9MFxEEgSNyUEkQ1CYXAQLIo2RQLAhUhgpRBYkFyOJyIZwMdIIEUgqBoEQg8RiUAhRSAiDRIhDfBh3fNqKh3ax3L4nuGnkLLzcm/1FTKkTCgHJyASfY67HNvsJTsDm10AyMr1is9eJ0M0ZBLL8sK+Rg3aa4pC16uQg6LZZFLJVYtHNmRgk5n8CiRGBxCDWqplkAciGpCCQmCwIB4HCsCE5CASGBZFASGOSIZIISUwSBIGQwkRDkAgJTBRkD0QuJgjZE5GDCY4V0J2drw9J3c5sDnpKITiZCY7ekO1pTFe4yEz66M3d5JaGocaYN9/8ENqzx0Rb8pxg1ZK8GXKtA4KMLmftIyOcqCGv+QWlM9pRoR6JBwAAAABJRU5ErkJggg==">
-            <div class="modal-content m-auto">
+            <div class="modal-content m-auto" style="position: relative">
 
             </div>
         </div>

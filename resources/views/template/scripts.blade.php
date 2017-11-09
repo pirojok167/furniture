@@ -6,4 +6,5 @@
 <script src="{{ asset('js/gallery/grid.js') }}"></script>
 <script src="{{ asset('js/jquery.viewportchecker.js') }}"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/phone/jquery.maskedinput.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
