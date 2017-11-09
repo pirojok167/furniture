@@ -94,11 +94,11 @@ $(document).ready(function () {
            $(".og-loading").hide();
            var p=document.createElement("p");
            p.innerHTML=name;
-           p.classList.add("big", "text-center");
+           p.classList.add("big", "text-center","mt-3");
            $(".gallery-content").append(p);
            var div=document.createElement("div");
            div.classList.add("owl-carousel", "owl-theme","w-100","h-100");
-           div.style="position:relative";
+           div.style="position:relative; padding-bottom:60px";
            $(".gallery-content").append(div);
            var src=JSON.parse(data);
            for(var i=0;i<src.length;i++){
@@ -122,7 +122,8 @@ $(document).ready(function () {
                items:1,
                loop:loop,
                nav:true,
-               navText : ["",""]
+               navText : ["",""],
+               dots:false
             });
        });
     });
