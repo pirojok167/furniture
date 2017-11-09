@@ -28,6 +28,7 @@ Route::group([
 ], function() {
 	Route::get('/', ['uses' => 'AdminController@index','as' => 'admin']);
 	Route::get('orders', ['uses' => 'OrderController@index','as' => 'orders']);
+	Route::get('search-orders', ['uses' => 'OrderController@searchOrders','as' => 'search_orders']);
 	Route::get('delete-order/{id?}', ['uses' => 'OrderController@deleteOrder', 'as' => 'deleteOrder']);
 	Route::post('add-note/{id?}', ['uses' => 'OrderController@addNote', 'as' => 'addNote']);
 	Route::resource('services', 'ServiceController');

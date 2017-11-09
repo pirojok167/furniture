@@ -11,14 +11,24 @@ class OrderController extends Controller
 	public function sendOrder(Request $request)
 	{
 		$data = Order::validate($request);
-		$request->flash();
-
 		$contacts = Contact::first();
+
+		$num = mt_rand(1111,9999);
+		$data['num'] = $this->setNum($num);
 
 		$order = new Order();
 		$result = $order->fill($data)->save() ? 'Ваша заявка принята' : false;
 		if ($result) Order::send($data, $order->id, $contacts);
 
-		return redirect()->back()->with(['result' => $result, 'contacts' => $this->contacts]);
+		return $result;
+    }
+
+	public function setNum($num)
+	{
+		$orders = Order::where('num', $num)->get();
+		if ($orders->isNotEmpty()) {
+			$number = mt_rand(1111,9999);
+			$this->setNum($number);
+		} else return $num;
     }
 }

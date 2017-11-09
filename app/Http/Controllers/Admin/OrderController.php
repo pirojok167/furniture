@@ -12,8 +12,24 @@ class OrderController extends Controller
 	{
 		$orders = $order->orderBy('id', 'desc')->select()->paginate(config('settings.orders_paginate'));
 		$paginate = view('partials.paginate')->with('items', $orders)->render();
-		return view('admin.orders')->with('orders', $orders);
+		return view('admin.orders')->with(['orders' => $orders, 'paginate' => $paginate]);
     }
+
+	public function searchOrders(Request $request)
+	{
+		$query = $request->input('q');
+		$validator = \Validator::make($request->all(), [
+			'q' => 'required|max:255|string'
+		]);
+		if ($validator->fails()) {
+			$orders = 'Некорректный запрос';
+		} else {
+			$orders = \DB::select("SELECT * FROM `orders` WHERE CONCAT(`num`, `name`)
+								LIKE '%$query%' ORDER BY id DESC");
+		}
+
+		return view('admin.orders')->with('orders', $orders);
+	}
 
 	public function deleteOrder($order_id)
 	{

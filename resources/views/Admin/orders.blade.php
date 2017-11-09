@@ -1,9 +1,15 @@
 @extends('admin.layouts.master')
 @section('content')
     <h2>Заявки</h2>
-    @if(!$orders->isEmpty())
+    <form action="{{ route('admin.search_orders') }}" method="get">
+        <input type="search" name="q" id="">
+        <input type="submit" id="" value="Найти">
+    </form>
+    <br>
+    @if(!empty($orders) && !is_string($orders))
         <table border="1px" cellspacing="10px" cellpadding="5px">
             <tr>
+                <th>№</th>
                 <th>Имя</th>
                 <th>Email</th>
                 <th>Телефон</th>
@@ -14,6 +20,7 @@
             </tr>
             @foreach($orders as $order)
                 <tr>
+                    <td>{{ $order->num }}</td>
                     <td>{{ $order->name }}</td>
                     <td>{{ $order->email }}</td>
                     <td>{{ $order->phone }}</td>
@@ -30,6 +37,7 @@
                 </tr>
             @endforeach
         </table>
-
+    @elseif(is_string($orders))
+        <p>{{ $orders }}</p>
     @endif
 @endsection

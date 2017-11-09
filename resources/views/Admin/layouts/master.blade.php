@@ -20,9 +20,11 @@
     {{ Session::get("result") }}
 @endif
 @yield('content')
-@if(isset($paginate) && !empty($paginate))
-    {!! $paginate !!}
-@endif
+@section('paginate')
+    @if(isset($paginate) && !empty($paginate))
+        {!! $paginate !!}
+    @endif
+@show
 @include('template.scripts')
 </body>
 </html>

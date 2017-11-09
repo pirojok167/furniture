@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Material;
+use App\Order;
 use App\Service;
 
 class IndexController extends Controller
