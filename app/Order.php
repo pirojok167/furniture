@@ -17,13 +17,13 @@ class Order extends Model
 
 		$validator = \Validator::make($data, [
 			'name' => 'string|max:255|required',
-			'phone' => 'numeric|required',
+			'phone' => 'string|max:255|required',
 			'email' => 'email|required',
 			'comment' => 'string|max:400'
 		]);
 
 		if ($validator->fails()) {
-			return redirect()->back()->withErrors($validator->errors());
+			return json_encode($validator->errors());
 		}
 		return $data;
     }
