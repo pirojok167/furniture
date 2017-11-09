@@ -14,24 +14,21 @@ class OrderController extends Controller
 		$contacts = Contact::first();
 
 		$num = mt_rand(1111,9999);
-		$data['num'] = $this->setNum($num);
 
 		$order = new Order();
+		$order->num = $this->setNum($num);
 		$result = $order->fill($data)->save() ? 'Ваша заявка принята' : false;
 		if ($result) Order::send($data, $order->id, $contacts);
 
 		return $result;
-<<<<<<< HEAD
     }
 
 	public function setNum($num)
 	{
 		$orders = Order::where('num', $num)->get();
-		if ($orders->isNotEmpty()) {
+		if (!$orders->isEmpty()) {
 			$number = mt_rand(1111,9999);
 			$this->setNum($number);
 		} else return $num;
-=======
->>>>>>> dc00a95bdaa2ffb7772eb94f92db582ec49ce9f3
     }
 }
