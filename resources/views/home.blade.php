@@ -25,7 +25,12 @@
                 </ul>
                 <a class="btn btn-green btn-sm ml-3" href="{{ route('repair') }}">Наши работы</a>
                 <div class="ml-auto mr-2">
-                    <p class="m-0 text-white" style="padding-bottom: 26px">Контакты:</p>
+                    <p class="m-0">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle-thin text-white fa-stack-2x"></i>
+                          <i class="fa fa-phone fa-stack-1x text-white"></i>
+                        </span>
+                    </p>
                 </div>
                 <div>
                     <p class="m-0 text-white">{{ $contacts->phone_1 }}</p>
@@ -36,8 +41,8 @@
     </nav>
 @endsection
 @section('content')
-    <div class="container-fluid bg-wrapper">
-        <div class="container">
+    <div class="container-fluid bg">
+        <div class="container bg-wrapper pt-4">
             <h2 class="text-center mb-5" style="font-family: 'Alice', serif;">Перетяжка и изготовление мягкой мебели в Воронеже</h2>
             <div class="row">
                 <div class="col" style="font-size: 22px">
@@ -51,7 +56,7 @@
                     <a class="btn btn-green ml-auto" href="{{ route('repair') }}">
                         Посмотреть наши работы
                     </a>
-                    <a class="btn btn-green-outline ml-3 mr-auto" href="#footer">
+                    <a class="btn btn-green-outline btn-order ml-3 mr-auto" href="#footer">
                         Оставить заявку
                     </a>
                 </div>

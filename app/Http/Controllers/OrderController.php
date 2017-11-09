@@ -21,6 +21,7 @@ class OrderController extends Controller
 		if ($result) Order::send($data, $order->id, $contacts);
 
 		return $result;
+<<<<<<< HEAD
     }
 
 	public function setNum($num)
@@ -30,5 +31,7 @@ class OrderController extends Controller
 			$number = mt_rand(1111,9999);
 			$this->setNum($number);
 		} else return $num;
+=======
+>>>>>>> dc00a95bdaa2ffb7772eb94f92db582ec49ce9f3
     }
 }

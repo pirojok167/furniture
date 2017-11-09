@@ -4,7 +4,7 @@
         <button style="position: absolute;left: 16px;top:8px;" class="navbar-toggler outline-n pointer" type="button" data-toggle="collapse" data-target="#navbarTogglerEx" aria-controls="navbarTogglerEx" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="container " >
+        <div class="container" >
             <a class="navbar-brand ml-auto ml-lg-0" href="/">
                 <img  height="40" src="../images/templates/logo.png">
             </a>
@@ -26,7 +26,12 @@
                 <a class="btn btn-green btn-sm ml-3" href="{{ route('repair') }}">Перетяжка</a>
                 <a class="btn btn-green btn-sm ml-2" href="{{ route('making') }}">Изготовление</a>
                 <div class="ml-auto mr-2">
-                    <p class="m-0 text-white" style="padding-bottom: 26px">Контакты:</p>
+                    <p class="m-0">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle-thin text-white fa-stack-2x"></i>
+                          <i class="fa fa-phone fa-stack-1x text-white"></i>
+                        </span>
+                    </p>
                 </div>
                 <div>
                     <p class="m-0 text-white">8-919-246-83-18</p>
@@ -46,8 +51,8 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-wrapper">
-        <div class="container pb-5 pt-4">
+    <div class="container-fluid bg">
+        <div class="container pb-5 pt-4 bg-wrapper">
             <h1 class="text-center mb-5" style="font-family: 'Alice', serif;">Перетяжка</h1>
             <div class="row repairs-blocks">
                 @if(!$repairs->isEmpty())
