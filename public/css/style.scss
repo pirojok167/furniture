@@ -8,6 +8,15 @@
   &:hover{color:$color!important;box-shadow: none!important;}
   &.focus,&:focus{box-shadow: inset -2px 2px 4px rgba(0,0,0,.35)!important;}
 }
+@mixin forFormsLog(){
+    background-color: #434b4d;
+    color: #EDA316;
+    &:focus{
+      border: 1px solid #EDA316;
+      box-shadow: 0 0 0 0.2rem rgba(237,163,22, 0.25);
+    }
+}
+$text:#212529;
 .btn-green{
   @include button(#fff,#465e0b);
 }
@@ -16,6 +25,9 @@
 }
 .bg-green{
   background-color: #91c318;
+}
+.bg-metall{
+  background-color: #434b4d;
 }
 .outline-n{
   outline: none!important;
@@ -33,6 +45,39 @@
   img{
     transition: .3s;
     transform: rotate(0deg)!important;
+  }
+}
+.admin-main-title {
+  color: #fff;
+  padding: 8px;
+  i {
+    padding-right: 8px;
+    border-right: 1px solid #fff;
+    margin-right: 5px;
+  }
+}
+.admin-main{
+  padding:0 5px 5px 5px;
+  .admin-table-block{
+    background-color: #fff;
+    padding: 15px;
+    table{
+      width: 100%;
+      tr,th{
+        text-align: center;
+      }
+
+      tbody{
+        img{
+          height: 100px;
+          width: 150px;
+          object-fit: cover;
+        }
+        tr:nth-child(2n+1){
+          background-color: #f8f6f1;
+        }
+      }
+    }
   }
 }
 #modal{
@@ -53,12 +98,8 @@
   width: 100%;
   height: 100%;
 }
-.orange-to-purple{
-  background:linear-gradient(to right, #EDA316, #2A145A);;
-}
-.bg-blur{
-  filter:blur(5px);
-  background-color: rgba(0,0,0,.5);
+.btn, .custom-file-input{
+  cursor: pointer;
 }
 .btn-yellow-custom{
   @include button(#fff,#EDA316)
@@ -66,6 +107,34 @@
 .btn-yellow-outline-custom{
   @include buttonOutline(#fff,#EDA316)
 }
+.custom-file-input:focus ~ .custom-file-control{
+  box-shadow: none!important;
+}
+#form-login{
+  input[type$=text]{
+    @include forFormsLog();
+  }
+  input[type$=password]{
+    @include forFormsLog();
+  }
+  input[type$=email]{
+    @include forFormsLog();
+  }
+
+  .custom-control-indicator{
+    background-color: transparent;
+    border: 1px solid #ced4da;
+  }
+  .custom-control-input:checked ~ .custom-control-indicator {
+    color: #fff;
+    background-color: #EDA316;
+  }
+  .custom-control-input:focus ~ .custom-control-indicator {
+    border: 1px solid #EDA316;
+    box-shadow: 0 0 0 1px #EDA316, 0 0 0 0.2rem rgba(237,163,22, 0.25);
+  }
+}
+
 .bg-wrapper{
   background-image: url(../images/templates/cream_dust.png);
 }
@@ -179,8 +248,33 @@ width: 400px;
 .text-green{
   color:#91c318!important;
 }
+.bg-beige{
+  background-color: #f8f6f1;
+}
+.admin-main-menu{
+  margin: 0;
+  li{
+    float: left;
+    list-style-type: none;
+    :hover{
+      background: #f8f6f1;
+    }
+    a{
+      display: block;
+      padding: 8px;
+      text-decoration:none;
+      color: $text;
+    }
+  }
+}
 #header{
-  .nav-link{  border-radius: 2px;  color: white;  }
+  .nav-link{
+    border-radius: 2px;
+    color: white!important;
+    &:hover{
+      color: #465e0b!important;
+    }
+  }
   a.nav-link.active{
     color: rgba(0,0,0,.5)!important;
   }

@@ -15,6 +15,9 @@ $(document).ready(function () {
     // });
     $(".btn-send-footer").on("click", function(e){
         e.preventDefault();
+        if($(".div-for-err").val()==""){
+            $(".div-for-err").remove();
+        }
         $(".layer-footer").fadeIn(300,"linear");
         var data=$("#form-footer").serializeArray();
         var url=$("#form-footer").attr("action");
@@ -23,15 +26,53 @@ $(document).ready(function () {
             url:url,
             data:data,
             success:function(data){
+                var str;
+                try{
+                    str=JSON.parse(data);
+
+                    var result=[];
+                    var j=0;
+                    for(var i in str){
+                        result[j]=str[i];
+                        j++;
+                    }
+                    str=result;
+                }catch (err){
+                    str=data;
+                }
+                console.log(str);
                 $(".loader").fadeOut(300,"linear", function(){
-                    $(".layer-footer-content").append("<h4 style='letter-spacing: 1px;display: none' class='m-auto thx-for-mail'>"+data+"</h4>");
-                    document.getElementById("form-footer").reset();
-                    $(".thx-for-mail").fadeIn(300,"linear", function () {
-                        $(".layer-footer").fadeOut(1500,"linear", function () {
-                            $(".thx-for-mail").remove();
-                            $(".loader").show();
+                    if(typeof str=="object"){
+
+                        var errArray=[];
+                        for(var i=0;i<str.length;i++){
+                            for(var j=0;j<str[i].length;j++){
+                                errArray[errArray.length]=str[i][j];
+                            }
+                        }
+                        $(".layer-footer-content").append("<div class='div-for-err m-auto'></div>");
+                        for(var i=0;i<errArray.length;i++){
+                            console.log("dasd");
+                            $(".div-for-err").append("<p style='letter-spacing: 1px;display: none' class='thx-for-mail'>"+errArray[i]+"</p>");
+                        }
+                        document.getElementById("form-footer").reset();
+                        $(".thx-for-mail").fadeIn(300,"linear", function () {
+                            $(".layer-footer").fadeOut(7000,"linear", function () {
+                                $(".thx-for-mail").remove();
+                                $(".loader").show();
+                            });
                         });
-                    });
+                    }
+                    else if(typeof str=="string"){
+                        $(".layer-footer-content").append("<h4 style='letter-spacing: 1px;display: none' class='m-auto thx-for-mail'>"+str+"</h4>");
+                        document.getElementById("form-footer").reset();
+                        $(".thx-for-mail").fadeIn(300,"linear", function () {
+                            $(".layer-footer").fadeOut(2000,"linear", function () {
+                                $(".thx-for-mail").remove();
+                                $(".loader").show();
+                            });
+                        });
+                    }
                 });
             }
         });

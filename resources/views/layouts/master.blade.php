@@ -11,9 +11,9 @@
 </head>
 <body data-spy="scroll" data-target="#header" data-offset="90">
 @if(Auth::user())
-    <div class="container-fluid" style="background-color: #FFCF48;">
+    <div class="container-fluid" style="background-color: #434b4d;">
         <div class="container">
-            <a class="text-dark" href="/admin">Админка</a>
+            <a class="text-white" href="{{ route('admin.orders') }}">Админка</a>
         </div>
     </div>
 @endif

@@ -11,16 +11,16 @@
             <div class="collapse navbar-collapse" id="navbarTogglerEx">
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white"  href="#services">Услуги<span class="sr-only">(current)</span></a>
+                        <a class="nav-link"  href="#services">Услуги<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"  href="#materials">Материалы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#order">Как заказать</a>
+                        <a class="nav-link" href="#order">Как заказать</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white"  href="#footer">Оставить заявку</a>
+                        <a class="nav-link"  href="#footer">Оставить заявку</a>
                     </li>
                 </ul>
                 <a class="btn btn-green btn-sm ml-3" href="{{ route('repair') }}">Наши работы</a>
@@ -33,8 +33,8 @@
                     </p>
                 </div>
                 <div>
-                    <p class="m-0 text-white">{{ $contacts->phone_1 }}</p>
-                    <p class="m-0 text-white">{{ $contacts->phone_2 }}</p>
+                    <p class="m-0 text-white">{{ $contacts->phone_1 ?? '' }}</p>
+                    <p class="m-0 text-white">{{ $contacts->phone_2 ?? '' }}</p>
                 </div>
             </div>
         </div>

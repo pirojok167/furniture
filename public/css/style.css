@@ -26,6 +26,9 @@
 .bg-green {
   background-color: #91c318; }
 
+.bg-metall {
+  background-color: #434b4d; }
+
 .outline-n {
   outline: none !important; }
 
@@ -39,6 +42,30 @@
 .show-more-material.collapsed img {
   transition: .3s;
   transform: rotate(0deg) !important; }
+
+.admin-main-title {
+  color: #fff;
+  padding: 8px; }
+  .admin-main-title i {
+    padding-right: 8px;
+    border-right: 1px solid #fff;
+    margin-right: 5px; }
+
+.admin-main {
+  padding: 0 5px 5px 5px; }
+  .admin-main .admin-table-block {
+    background-color: #fff;
+    padding: 15px; }
+    .admin-main .admin-table-block table {
+      width: 100%; }
+      .admin-main .admin-table-block table tr, .admin-main .admin-table-block table th {
+        text-align: center; }
+      .admin-main .admin-table-block table tbody img {
+        height: 100px;
+        width: 150px;
+        object-fit: cover; }
+      .admin-main .admin-table-block table tbody tr:nth-child(2n+1) {
+        background-color: #f8f6f1; }
 
 #modal {
   position: fixed;
@@ -58,12 +85,8 @@
   width: 100%;
   height: 100%; }
 
-.orange-to-purple {
-  background: linear-gradient(to right, #EDA316, #2A145A); }
-
-.bg-blur {
-  filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.5); }
+.btn, .custom-file-input {
+  cursor: pointer; }
 
 .btn-yellow-custom {
   color: #fff;
@@ -88,6 +111,37 @@
   border-color: #EDA316; }
 .btn-yellow-outline-custom.focus, .btn-yellow-outline-custom:focus {
   box-shadow: none !important; }
+
+.custom-file-input:focus ~ .custom-file-control {
+  box-shadow: none !important; }
+
+#form-login input[type$=text] {
+  background-color: #434b4d;
+  color: #EDA316; }
+  #form-login input[type$=text]:focus {
+    border: 1px solid #EDA316;
+    box-shadow: 0 0 0 0.2rem rgba(237, 163, 22, 0.25); }
+#form-login input[type$=password] {
+  background-color: #434b4d;
+  color: #EDA316; }
+  #form-login input[type$=password]:focus {
+    border: 1px solid #EDA316;
+    box-shadow: 0 0 0 0.2rem rgba(237, 163, 22, 0.25); }
+#form-login input[type$=email] {
+  background-color: #434b4d;
+  color: #EDA316; }
+  #form-login input[type$=email]:focus {
+    border: 1px solid #EDA316;
+    box-shadow: 0 0 0 0.2rem rgba(237, 163, 22, 0.25); }
+#form-login .custom-control-indicator {
+  background-color: transparent;
+  border: 1px solid #ced4da; }
+#form-login .custom-control-input:checked ~ .custom-control-indicator {
+  color: #fff;
+  background-color: #EDA316; }
+#form-login .custom-control-input:focus ~ .custom-control-indicator {
+  border: 1px solid #EDA316;
+  box-shadow: 0 0 0 1px #EDA316, 0 0 0 0.2rem rgba(237, 163, 22, 0.25); }
 
 .bg-wrapper {
   background-image: url(../images/templates/cream_dust.png); }
@@ -185,9 +239,27 @@ body {
 .text-green {
   color: #91c318 !important; }
 
+.bg-beige {
+  background-color: #f8f6f1; }
+
+.admin-main-menu {
+  margin: 0; }
+  .admin-main-menu li {
+    float: left;
+    list-style-type: none; }
+    .admin-main-menu li :hover {
+      background: #f8f6f1; }
+    .admin-main-menu li a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: #212529; }
+
 #header .nav-link {
   border-radius: 2px;
-  color: white; }
+  color: white !important; }
+  #header .nav-link:hover {
+    color: #465e0b !important; }
 #header a.nav-link.active {
   color: rgba(0, 0, 0, 0.5) !important; }
 

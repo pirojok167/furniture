@@ -19,7 +19,7 @@ class Order extends Model
 			'name' => 'string|max:255|required',
 			'phone' => 'string|max:255|required',
 			'email' => 'email|required',
-			'comment' => 'string|max:400'
+			'comment' => 'string|max:300'
 		]);
 
 		if ($validator->fails()) {

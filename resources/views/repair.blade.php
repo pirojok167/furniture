@@ -34,8 +34,8 @@
                     </p>
                 </div>
                 <div>
-                    <p class="m-0 text-white">8-919-246-83-18</p>
-                    <p class="m-0 text-white">8-919-246-83-18</p>
+                    <p class="m-0 text-white">{{ $contacts->phone_1 ?? '' }}</p>
+                    <p class="m-0 text-white">{{ $contacts->phone_2 ?? '' }}</p>
                 </div>
             </div>
         </div>

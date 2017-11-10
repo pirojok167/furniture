@@ -11,6 +11,9 @@ class OrderController extends Controller
 	public function sendOrder(Request $request)
 	{
 		$data = Order::validate($request);
+		if(!is_array($data)){
+		    return $data;
+        }
 		$contacts = Contact::first();
 
 		$num = mt_rand(1111,9999);
