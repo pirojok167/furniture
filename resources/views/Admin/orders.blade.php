@@ -4,7 +4,7 @@
 
             <div class="bg-metall admin-main">
                 <div class="admin-main-title">
-                    <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
                     Управление заявками
                 </div>
                 <div class="admin-table-block">

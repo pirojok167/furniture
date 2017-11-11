@@ -4,7 +4,7 @@
         <div class="container">
             <div class="bg-metall admin-main">
                 <div class="admin-main-title">
-                    <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                    <i class="fa fa-stack-overflow" aria-hidden="true"></i>
                     Управление материалами
                 </div>
                 <div class="admin-table-block">

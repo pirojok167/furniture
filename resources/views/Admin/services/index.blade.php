@@ -8,22 +8,25 @@
                     Управление услугами
                 </div>
                 <div class="admin-table-block">
-                    <a href="{{ route('admin.services.create') }}">Добавить услугу</a>
-                    @if(!empty($services))
-                        @foreach($services as $service)
-                            <div>
-                                <h3>{{ $service->name }}</h3>
-                                <p>{{ $service->description }}</p>
-                                <img style="max-width:500px;" src="{{ asset("images/$service->image") }}">
-                            </div>
-                            <a href="{{ route('admin.services.edit', ['id' => $service->id]) }}">Редактировать</a>
-                            <form action="{{ route('admin.services.destroy', ['id' => $service->id]) }}" method="post">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <input type="submit" value="Удалить" class="btn btn-danger">
-                            </form>
-                        @endforeach
-                    @endif
+                    <a class="btn btn-yellow-custom mb-3" href="{{ route('admin.services.create') }}">Добавить услугу</a>
+                    <div class="row">
+                        @if(!empty($services))
+                            @foreach($services as $service)
+                                <div class="col-6">
+                                        <h4>{{ $service->name }}</h4>
+                                        <p>{{ $service->description }}</p>
+                                        <img class="w-100" src="{{ asset("images/$service->image") }}">
+                                    <form class=" d-flex mt-3" action="{{ route('admin.services.destroy', ['id' => $service->id]) }}"
+                                          method="post">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <a class="btn btn-yellow-custom ml-auto" href="{{ route('admin.services.edit', ['id' => $service->id]) }}">Редактировать</a>
+                                        <input type="submit" value="Удалить" class="btn btn-danger ml-2">
+                                    </form>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
