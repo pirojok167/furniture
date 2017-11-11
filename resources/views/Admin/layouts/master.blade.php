@@ -11,15 +11,6 @@
 </head>
 <body>
 @include('Admin.partials.header')
-@if (count($errors) > 0)
-    @foreach ($errors->all() as $error)
-        {{ $error }}'
-    @endforeach
-@endif
-
-@if(Session::has('result') && !is_array(Session::get('result')))
-    {{ Session::get("result") }}
-@endif
 @yield('content')
 @section('paginate')
     @if(isset($paginate) && !empty($paginate))

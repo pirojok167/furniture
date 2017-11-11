@@ -8,11 +8,22 @@
                     Управление материалами
                 </div>
                 <div class="admin-table-block">
+                    @if (count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger" role="alert">{{ $error }}</div>
+                        @endforeach
+                    @endif
+                    @if(Session::has('result') && !is_array(Session::get('result')))
+                        <div class="alert alert-dark" role="alert">
+                            {{ Session::get("result") }}
+                        </div>
+                    @endif
                     <form action="{{ route('admin.materials.store') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Нименование:
-                                <input class="form-control" type="text" value="{{ old('name') ?? '' }}" placeholder="Ткань" name="name">
+                                <input class="form-control" type="text" value="{{ old('name') ?? '' }}"
+                                       placeholder="Ткань" name="name">
                             </label>
                         </div>
                         <div class="form-group">
