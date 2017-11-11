@@ -34,13 +34,10 @@
                         </div>
                         <div class="form-group">
                             <p class="m-0">Изображение:</p>
-                            <label class="custom-file">
-                                <input type="file" name="image" class="custom-file-input">
-                                <span class="custom-file-control"></span>
-                            </label>
+                                <input type="file" name="image" >
                         </div>
                         <div class="form-group">
-                            <input class="btn btn-yellow-custom" type="submit" value="Добавить">
+                            <input class="btn btn-show" type="submit" value="Добавить">
                         </div>
                     </form>
                 </div>

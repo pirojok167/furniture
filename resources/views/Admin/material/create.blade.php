@@ -29,14 +29,11 @@
                         <div class="form-group">
                             <label class="mb-0">Изображения:</label>
                             <br>
-                            <label class="custom-file">
-                                <input type="file" name="image" class="custom-file-input">
-                                <span class="custom-file-control"></span>
-                            </label>
+                                <input type="file" name="image">
                         </div>
                         <div class="form-group">
-                            <input class="btn btn-danger" type="submit" id="" value="Добавить">
-                            <a class="btn btn-primary" href="{{ route('admin.materials.index') }}">Отменить</a>
+                            <input class="btn btn-show" type="submit" id="" value="Добавить">
+                            <a class="btn btn-remove" href="{{ route('admin.materials.index') }}">Отменить</a>
                         </div>
                     </form>
                 </div>

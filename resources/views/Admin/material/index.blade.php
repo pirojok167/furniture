@@ -8,7 +8,7 @@
                     Управление материалами
                 </div>
                 <div class="admin-table-block">
-                    <a class="btn btn-yellow-custom" href="{{ route('admin.materials.create') }}">Добавить</a>
+                    <a class="btn btn-yellow-custom" href="{{ route('admin.materials.create') }}">Добавить материал</a>
                     <div class="row">
                         @if(!$materials->isEmpty())
                             @foreach($materials as $material)
@@ -23,10 +23,10 @@
                                             <div class="row mt-2">
                                                 <div class="col-6">
                                                     <input type="submit" name="delete" id="" value="Удалить"
-                                                           class="btn btn-block btn-danger">
+                                                           class="btn btn-block btn-remove">
                                                 </div>
                                                 <div class="col-6">
-                                                    <a class="btn btn-block btn-success"
+                                                    <a class="btn btn-block btn-edit"
                                                        href="{{ route('admin.materials.edit', ['id' => $material->id]) }}">Редактировать</a>
                                                 </div>
                                             </div>

@@ -102,10 +102,19 @@ $text:#212529;
   cursor: pointer;
 }
 .btn-yellow-custom{
-  @include button(#fff,#EDA316)
+  @include button(#fff,#EDA316);
 }
 .btn-yellow-outline-custom{
-  @include buttonOutline(#fff,#EDA316)
+  @include buttonOutline(#fff,#EDA316);
+}
+.btn-edit{
+  @include button(#fff, #e97c69);
+}
+.btn-show{
+  @include button(#fff, #4b6382);
+}
+.btn-remove{
+  @include button(#fff, #de5b5f);
 }
 .custom-file-input:focus ~ .custom-file-control{
   box-shadow: none!important;

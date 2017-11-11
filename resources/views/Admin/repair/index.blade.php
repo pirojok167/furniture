@@ -17,52 +17,46 @@
                             @foreach($repairs as $repair)
                                 <div class="col-6 mt-2">
                                     <div class="bg-wrapper p-2">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <img class="w-100" style="height: 100px; object-fit: cover"
-                                                 src="{{ asset("images/$repair->image_1") }}" alt="До">
-                                            <form action="{{ route('admin.repair.update', ['id' => $repair->id]) }}"
-                                                  method="post" enctype="multipart/form-data">
-                                                {{ csrf_field() }}
-                                                {{ method_field('PUT') }}
-                                                <div class="form-group mt-2 mb-2">
-                                                    <label class="custom-file">
-                                                        <input type="file" name="image_1" class="custom-file-input">
-                                                        <span class="custom-file-control"></span>
-                                                    </label>
-                                                </div>
-                                                <input class="btn btn-yellow-custom btn-block" type="submit"
-                                                       value="Изменить">
-                                            </form>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <img class="w-100" style="height: 100px; object-fit: cover"
+                                                     src="{{ asset("images/$repair->image_1") }}" alt="До">
+                                                <form action="{{ route('admin.repair.update', ['id' => $repair->id]) }}"
+                                                      method="post" enctype="multipart/form-data">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('PUT') }}
+                                                    <div class="form-group mt-2 mb-2">
+                                                        <input type="file" name="image_1">
+                                                    </div>
+                                                    <input class="btn btn-edit btn-block" type="submit"
+                                                           value="Изменить">
+                                                </form>
+                                            </div>
+                                            <div class="col-6">
+                                                <img class="w-100" style="height: 100px; object-fit: cover"
+                                                     src="{{ asset("images/$repair->image_2") }}"
+                                                     alt="После">
+                                                <form action="{{ route('admin.repair.update', ['id' => $repair->id]) }}"
+                                                      method="post" enctype="multipart/form-data">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('PUT') }}
+                                                    <div class="form-group mt-2 mb-2">
+                                                        <input type="file" name="image_2">
+                                                    </div>
+                                                    <input class="btn btn-edit btn-block" type="submit"
+                                                           value="Изменить">
+                                                </form>
+                                            </div>
+                                            <div class="col-12 mt-3 d-flex">
+                                                <form class="d-inline-block ml-auto"
+                                                      action="{{ route('admin.repair.destroy', ['id' => $repair->id]) }}"
+                                                      method="post">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <input class="btn btn-remove" type="submit" value="Удалить">
+                                                </form>
+                                            </div>
                                         </div>
-                                        <div class="col-6">
-                                            <img class="w-100" style="height: 100px; object-fit: cover"
-                                                 src="{{ asset("images/$repair->image_2") }}"
-                                                 alt="После">
-                                            <form action="{{ route('admin.repair.update', ['id' => $repair->id]) }}"
-                                                  method="post" enctype="multipart/form-data">
-                                                {{ csrf_field() }}
-                                                {{ method_field('PUT') }}
-                                                <div class="form-group mt-2 mb-2">
-                                                    <label class="custom-file">
-                                                        <input type="file" name="image_2" class="custom-file-input">
-                                                        <span class="custom-file-control"></span>
-                                                    </label>
-                                                </div>
-                                                <input class="btn btn-yellow-custom btn-block" type="submit"
-                                                       value="Изменить">
-                                            </form>
-                                        </div>
-                                        <div class="col-12 mt-3 d-flex">
-                                            <form class="d-inline-block ml-auto"
-                                                  action="{{ route('admin.repair.destroy', ['id' => $repair->id]) }}"
-                                                  method="post">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                                <input class="btn btn-danger" type="submit" value="Удалить">
-                                            </form>
-                                        </div>
-                                    </div>
                                     </div>
                                 </div>
                             @endforeach

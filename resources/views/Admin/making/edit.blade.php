@@ -34,13 +34,10 @@
                                     <div class="form-group">
                                         <label class="mb-0">Заменить изображения</label>
                                         <br>
-                                        <label class="custom-file">
-                                            <input type="file" name="images[]" multiple class="custom-file-input">
-                                            <span class="custom-file-control"></span>
-                                        </label>
+                                            <input type="file" name="images[]" multiple >
                                     </div>
                                     <div class="form-group">
-                                        <input class="btn btn-yellow-custom" type="submit" value="Изменить"
+                                        <input class="btn btn-edit" type="submit" value="Изменить"
                                                name="submit" id="">
                                     </div>
                                 </form>
@@ -70,8 +67,8 @@
                                       action="{{ route('admin.making.destroy', ['id' => $making->id]) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <input class="btn btn-danger" type="submit" name="submit" id="" value="Удалить">
-                                    <a class="btn btn-primary" href="{{ route('admin.making.index') }}">Назад</a>
+                                    <input class="btn btn-remove" type="submit" name="submit" id="" value="Удалить">
+                                    <a class="btn btn-show" href="{{ route('admin.making.index') }}">Назад</a>
                                 </form>
                             </div>
                         @endif

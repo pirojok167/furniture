@@ -112,6 +112,39 @@
 .btn-yellow-outline-custom.focus, .btn-yellow-outline-custom:focus {
   box-shadow: none !important; }
 
+.btn-edit {
+  color: #fff;
+  background-color: #e97c69;
+  border-color: #e97c69;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.35); }
+.btn-edit:hover {
+  color: #fff !important;
+  box-shadow: none !important; }
+.btn-edit.focus, .btn-edit:focus {
+  box-shadow: inset -2px 2px 4px rgba(0, 0, 0, 0.35) !important; }
+
+.btn-show {
+  color: #fff;
+  background-color: #4b6382;
+  border-color: #4b6382;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.35); }
+.btn-show:hover {
+  color: #fff !important;
+  box-shadow: none !important; }
+.btn-show.focus, .btn-show:focus {
+  box-shadow: inset -2px 2px 4px rgba(0, 0, 0, 0.35) !important; }
+
+.btn-remove {
+  color: #fff;
+  background-color: #de5b5f;
+  border-color: #de5b5f;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.35); }
+.btn-remove:hover {
+  color: #fff !important;
+  box-shadow: none !important; }
+.btn-remove.focus, .btn-remove:focus {
+  box-shadow: inset -2px 2px 4px rgba(0, 0, 0, 0.35) !important; }
+
 .custom-file-input:focus ~ .custom-file-control {
   box-shadow: none !important; }
 

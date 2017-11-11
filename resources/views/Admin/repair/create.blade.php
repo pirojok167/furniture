@@ -23,20 +23,14 @@
                         <div class="row">
                             <div class="col-6">
                                 <p>Изображение <b>ДО</b>:</p>
-                                <label class="custom-file">
-                                    <input type="file" name="image_1" class="custom-file-input">
-                                    <span class="custom-file-control"></span>
-                                </label>
+                                <input type="file" name="image_1">
                             </div>
                             <div class="col-6">
                                 <p>Изображение <b>ПОСЛЕ</b>:</p>
-                                <label class="custom-file">
-                                    <input type="file" name="image_2" class="custom-file-input">
-                                    <span class="custom-file-control"></span>
-                                </label>
+                                <input type="file" name="image_2">
                             </div>
                             <div class="col-12 mt-4">
-                                <input class="pointer btn btn-yellow-custom" type="submit" value="Сохранить">
+                                <input class="pointer btn btn-show" type="submit" value="Добавить">
                             </div>
                         </div>
                     </form>

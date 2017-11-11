@@ -42,20 +42,17 @@
                                      alt="{{ $service->name }}">
                             </div>
                             <div class="form-group">
-                                <label class="custom-file">
-                                    <input type="file" name="image" class="custom-file-input">
-                                    <span class="custom-file-control"></span>
-                                </label>
+                                <input type="file" name="image">
                             </div>
                             <div class="form-group">
-                                <input class="btn btn-yellow-custom fl" type="submit" value="Изменить">
+                                <input class="btn btn-edit fl" type="submit" value="Изменить">
                             </div>
                         </form>
                         <form style="margin-left: 103px"
                               action="{{ route('admin.services.destroy', ['id' => $service->id]) }}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <input type="submit" value="Удалить" class="btn btn-danger">
+                            <input type="submit" value="Удалить" class="btn btn-remove">
                         </form>
                     @endif
                 </div>

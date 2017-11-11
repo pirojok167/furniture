@@ -46,7 +46,7 @@
                                 <td>{{ $order->phone }}</td>
                                 <td style="max-width: 500px">{{ $order->comment ?? 'Нет комментария' }}</td>
                                 <td>{{ $order->created_at }}</td>
-                                <td><a class="btn btn-danger btn-sm pointer"
+                                <td><a class="btn btn-remove btn-sm pointer"
                                        href="{{ route('admin.deleteOrder', ['id' => $order->id]) }}">Удалить</a></td>
                                 <td>
                                     <form action="{{ route('admin.addNote', ['id' => $order->id]) }}" method="post">
@@ -56,7 +56,7 @@
                                                       placeholder="Заметка">{{ $order->note }}</textarea>
                                         </div>
                                         <div class="form-group text-center">
-                                            <input class="btn btn-yellow-custom " type="submit"
+                                            <input class="btn btn-edit " type="submit"
                                                    value="{{ $order->note ? 'Изменить' : 'Добавить' }}">
                                         </div>
                                     </form>
