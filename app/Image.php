@@ -15,6 +15,18 @@ class Image extends Model
 		return false;
 	}
 
+	public static function getDeleteAllImages($id)
+	{
+		$directory = '/makings/'.$id;
+		$result = (\Storage::disk('images')->has($directory)) ? \Storage::disk('images')->deleteDirectory($directory) : false;
+		if ($result) {
+			$result = 'Изображения удалены';
+		} else {
+			$result = 'Ошибка';
+		}
+		return $result;
+	}
+
 	public static function saveImage($request, $dir, $id = false) {
 		if($request->hasFile('image') || $request->hasFile('image_1') || $request->hasFile('image_2')) {
 			$file = $request->file('image') ?? $request->file('image_1') ?? $request->file('image_2');

@@ -34,7 +34,7 @@ Route::group([
 	Route::resource('services', 'ServiceController');
 	Route::resource('repair', 'RepairController');
 	Route::resource('making', 'MakingController');
-	Route::post('making-delete-image',['uses' => 'MakingController@makingDeletImage', 'as' => 'makingDeletImage']);
+	Route::post('making-delete-image',['uses' => 'MakingController@makingDeleteImage', 'as' => 'makingDeletImage']);
 	Route::resource('materials', 'MaterialController');
 	Route::resource('contacts', 'ContactController');
 	Route::post('change-password', ['uses' => 'UserController@changePassword', 'as' => 'changePassword']);

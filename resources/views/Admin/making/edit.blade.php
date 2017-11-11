@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-12 d-flex">
                                 <form class="d-inline-block ml-auto"
-                                      action="{{ route('admin.making.destroy', ['id' => $making->id]) }}">
+                                      action="{{ route('admin.making.destroy', ['id' => $making->id]) }}" method="post">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
                                     <input class="btn btn-danger" type="submit" name="submit" id="" value="Удалить">

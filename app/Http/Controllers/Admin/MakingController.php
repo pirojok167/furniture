@@ -46,7 +46,7 @@ class MakingController extends Controller
     	$data = $request->except('_token');
 
     	$this->validate($request, [
-    		'name' => 'string|max:255|required'
+    		'name' => 'required|string|max:255'
 	    ]);
 
 	    $making = new Making();
@@ -114,12 +114,16 @@ class MakingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+    	$making = Making::destroy($id);
+    	if ($making)
+		    $result = Image::getDeleteAllImages($id) ?? 'Ошибка';
+	    else $result = 'Ошибка';
+	    return redirect()->route('admin.making.index')->with('result', $result);
     }
 
-	public function makingDeletImage(Request $request)
+	public function makingDeleteImage(Request $request)
 	{
 		$result = Image::destroyImage($request->input('image')) ? 'Изображение удалено' : 'Ошибка';
 		return redirect()->back()->with('result', $result);
