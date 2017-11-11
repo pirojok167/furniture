@@ -4,10 +4,20 @@
         <div class="container">
             <div class="bg-metall admin-main">
                 <div class="admin-main-title">
-                    <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                    <i class="fa fa-user" aria-hidden="true"></i>
                     Управление профилем
                 </div>
                 <div class="admin-table-block">
+                    @if (count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger" role="alert">{{ $error }}</div>
+                        @endforeach
+                    @endif
+                    @if(Session::has('result') && !is_array(Session::get('result')))
+                        <div class="alert alert-dark" role="alert">
+                            {{ Session::get("result") }}
+                        </div>
+                    @endif
                     @if(!empty($profile))
                         <form action="{{ route('admin.changeProfile') }}" method="post">
                             {{ csrf_field() }}

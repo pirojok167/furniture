@@ -15,7 +15,8 @@
                         </div>
                         @if(!$repairs->isEmpty())
                             @foreach($repairs as $repair)
-                                <div class="col-6">
+                                <div class="col-6 mt-2">
+                                    <div class="bg-wrapper p-2">
                                     <div class="row">
                                         <div class="col-6">
                                             <img class="w-100" style="height: 100px; object-fit: cover"
@@ -61,6 +62,7 @@
                                                 <input class="btn btn-danger" type="submit" value="Удалить">
                                             </form>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>
                             @endforeach
