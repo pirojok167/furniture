@@ -82,7 +82,7 @@ $(document).ready(function () {
         var img=document.createElement("img");
         img.src=src;
         img.id="imgInModal";
-        img.style="objectFit:cover";
+        img.style="object-fit:cover";
         var cancel=document.createElement("img");
         cancel.style="position: absolute; top: 10px; right: 10px";
         cancel.classList.add("pointer", "icon", "icons8-Удалить");
@@ -92,11 +92,11 @@ $(document).ready(function () {
         $(".modal-content").append(img);
         $(".modal-content").append(cancel);
         $("#modal").fadeIn(300,"linear");
-        if($("#imgInModal").height()>document.documentElement.clientHeight-20){
-            $("#imgInModal").height(document.documentElement.clientHeight-20);
-        }
         if($("#imgInModal").width()>document.documentElement.clientWidth-20){
             $("#imgInModal").width(document.documentElement.clientWidth-20);
+        }
+        if($("#imgInModal").height()>document.documentElement.clientHeight-20){
+            $("#imgInModal").height(document.documentElement.clientHeight-20);
         }
     });
     $("#modal").on("click", function(){

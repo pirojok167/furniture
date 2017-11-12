@@ -7,7 +7,7 @@
                     <i class="fa fa-wrench" aria-hidden="true"></i>
                     Ремонт и перетяжка
                 </div>
-                <div class="admin-table-block">
+                <div style="overflow: hidden" class="admin-table-block">
                     <div class="row">
                         <div class="col-12 mb-3">
                             <a class="btn btn-yellow-custom ml-auto" href="{{ route('admin.repair.create') }}">Добавить
@@ -15,10 +15,10 @@
                         </div>
                         @if(!$repairs->isEmpty())
                             @foreach($repairs as $repair)
-                                <div class="col-6 mt-2">
+                                <div class="col-md-6 col-12 mt-2">
                                     <div class="bg-wrapper p-2">
                                         <div class="row">
-                                            <div class="col-6">
+                                            <div class="col-sm-6 col-12 mb-3 mb-sm-0">
                                                 <img class="w-100" style="height: 100px; object-fit: cover"
                                                      src="{{ asset("images/$repair->image_1") }}" alt="До">
                                                 <form action="{{ route('admin.repair.update', ['id' => $repair->id]) }}"
@@ -28,11 +28,11 @@
                                                     <div class="form-group mt-2 mb-2">
                                                         <input type="file" name="image_1">
                                                     </div>
-                                                    <input class="btn btn-edit btn-block" type="submit"
+                                                    <input class="btn btn-sm btn-edit btn-block" type="submit"
                                                            value="Изменить">
                                                 </form>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-sm-6 col-12">
                                                 <img class="w-100" style="height: 100px; object-fit: cover"
                                                      src="{{ asset("images/$repair->image_2") }}"
                                                      alt="После">
@@ -43,7 +43,7 @@
                                                     <div class="form-group mt-2 mb-2">
                                                         <input type="file" name="image_2">
                                                     </div>
-                                                    <input class="btn btn-edit btn-block" type="submit"
+                                                    <input class="btn btn-sm btn-edit btn-block" type="submit"
                                                            value="Изменить">
                                                 </form>
                                             </div>
@@ -53,7 +53,7 @@
                                                       method="post">
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
-                                                    <input class="btn btn-remove" type="submit" value="Удалить">
+                                                    <input class="btn btn-sm btn-remove" type="submit" value="Удалить">
                                                 </form>
                                             </div>
                                         </div>

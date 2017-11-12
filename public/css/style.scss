@@ -189,6 +189,30 @@ $text:#212529;
     }
   }
 }
+@media (max-width: 575px) {
+  .icons8-Стрелка-Filled{
+    transform: rotate(90deg);
+  }
+  .services-block{
+    .services-overflow-decs{
+      width: 75%!important;
+    }
+    &:hover{
+      img{
+        transform: translateX(-75%);
+      }
+      .services-overflow{
+        .services-overflow-decs{
+          left: 25%;
+        }
+        .services-overflow-img-layer{
+          transform: translateX(-75%);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
 footer{
   color: #fff;
   background-image: url(../images/templates/bg_footer.png);

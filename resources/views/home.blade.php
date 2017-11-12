@@ -45,20 +45,26 @@
         <div class="container bg-wrapper pt-4">
             <h2 class="text-center mb-5" style="font-family: 'Alice', serif;">Перетяжка и изготовление мягкой мебели в Воронеже</h2>
             <div class="row">
-                <div class="col" style="font-size: 22px">
+                <div class="col-lg-6 col-12 order-lg-1" style="font-size: 1.3rem">
                     Перетяжка мягкой мебели: диваны, кресла,
                     кухонные уголки, офисная мебель, стулья, пуфики. Замена: обивочной ткани, поролона, искусственного наполнителя                   (холлофайбер и поролоновая крошка), пружинных блоков и механизмов трансформации. Ремонт каркаса.
                 </div>
-                <div class="col">
+                <div class="col-lg-6 col-12 order-first order-lg-2">
                     <img class="img" src="../images/templates/sofa.png" alt="">
                 </div>
-                <div class="col-12 d-flex mt-4">
-                    <a class="btn btn-green ml-auto" href="{{ route('repair') }}">
-                        Посмотреть наши работы
-                    </a>
-                    <a class="btn btn-green-outline btn-order ml-3 mr-auto" href="#footer">
-                        Оставить заявку
-                    </a>
+                <div class="col-12 mt-4 order-3">
+                    <div class="row">
+                        <div class="col-sm-6 col-12 d-flex">
+                            <a class="btn btn-green mx-auto mx-sm-0 ml-sm-auto" href="{{ route('repair') }}">
+                                Посмотреть наши работы
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-12 d-flex">
+                            <a class="btn mt-3 mt-sm-0 btn-green-outline btn-order mx-auto mx-sm-0 mr-sm-auto" href="#footer">
+                                Оставить заявку
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="post" id="services">
@@ -67,7 +73,7 @@
                 </div>
                 <div class="row">
                     @foreach($services as $service)
-                        <div class="col-6 mb-3 services-block">
+                        <div class="col-lg-6 col-12 mb-3 services-block">
                             <div class="w-100 p-2 bg-gray">
                                 <div class="services-overflow">
                                     <img class="w-100" style="height: 400px;object-fit: cover" src="{{ asset("images/$service->image") }}">
@@ -88,7 +94,7 @@
                     @foreach($materials_chunk as $k => $materials)
                         @if($k === 0)
                             @foreach($materials as $material)
-                                <div class="col-3 mb-3">
+                                <div class="col-md-4 col-sm-6 col-12 col-lg-3 mb-3">
                                     <div class="p-2" style="background-color: #f0f0f0;border-radius: 2px">
                                         <p class="text-center mb-2">{{ $material->name }}</p>
                                         <div class="img-materials" style="position: relative">
@@ -105,7 +111,7 @@
                                 @foreach($materials_chunk as $k => $materials)
                                     @foreach($materials as $material)
                                         @if($k > 0)
-                                            <div class="col-3 mb-3">
+                                            <div class="col-md-4 col-sm-6 col-12 col-lg-3 mb-3">
                                                 <div class="p-2" style="background-color: #f0f0f0;">
                                                     <p class="text-center mb-2">{{ $material->name }}</p>
                                                     <div class="img-materials" style="position: relative">
@@ -134,29 +140,29 @@
                     <h2 class="text-white special-title bg-green d-inline-block pb-1 pr-4 pl-4">Как мы выполняем Ваш заказ</h2>
                 </div>
                 <div class="row mt-5 mb-5">
-                    <div class="ml-auto col-2">
+                    <div class="ml-lg-auto col-lg-2 col-md-3 col-sm-4 col-6">
                         <p class="text-center">Шаг 1.</p>
                         <img class="w-100" src="../images/templates/circle_1.png" alt="">
                         <div class="text-center mt-2" >Позвоните нам или оставьте заявку, и мы свяжемся с вами
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                         <p class="text-center">Шаг 2.</p>
                         <img class="w-100" src="../images/templates/circle_2.png" alt="">
                         <div class="text-center mt-2">Произведём замеры</div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mt-3 mt-sm-0">
                         <p class="text-center">Шаг 3.</p>
                         <img class="w-100" src="../images/templates/circle_3.png" alt="">
                         <div class="text-center mt-2">Определим стоимость работ и материалов</div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mt-3 mt-md-0">
                         <p class="text-center">Шаг 4.</p>
                         <img class="w-100" src="../images/templates/circle_4.png" alt="">
                         <div class="text-center mt-2">Отремонтируем Ваш диван
                         </div>
                     </div>
-                    <div class="col-2 mr-auto">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mr-lg-auto mt-3 mt-lg-0">
                         <p class="text-center">Шаг 5.</p>
                         <img class="w-100" src="../images/templates/circle_5.png" alt="">
                         <div class="text-center mt-2">Акт о приёмке выполненных работ и оплата</div>

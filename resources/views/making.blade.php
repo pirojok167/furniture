@@ -44,7 +44,7 @@
 @section('content')
     <div class="container-fluid bg">
         <div class="container pb-5 pt-4 bg-wrapper">
-            <h1 class="text-center mb-5" style="font-family: 'Alice', serif;">Изготовление</h1>
+            <h1 class="text-center mb-4" style="font-family: 'Alice', serif;">Изготовление</h1>
             <ul id="og-grid" class="og-grid">
                 @if(!$makings->isEmpty())
                     @foreach($makings as $making)

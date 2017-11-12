@@ -7,7 +7,7 @@
                     <i class="fa fa-wrench" aria-hidden="true"></i>
                     Ремонт и перетяжка
                 </div>
-                <div class="admin-table-block">
+                <div style="overflow: hidden" class="admin-table-block">
                     @if (count($errors) > 0)
                         @foreach ($errors->all() as $error)
                             <div class="alert alert-danger" role="alert">{{ $error }}</div>
@@ -21,11 +21,11 @@
                     <form action="{{ route('admin.repair.store') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <p>Изображение <b>ДО</b>:</p>
                                 <input type="file" name="image_1">
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 col-12 mt-3 mt-md-0">
                                 <p>Изображение <b>ПОСЛЕ</b>:</p>
                                 <input type="file" name="image_2">
                             </div>

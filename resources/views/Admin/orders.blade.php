@@ -7,7 +7,7 @@
                 <i class="fa fa-handshake-o" aria-hidden="true"></i>
                 Управление заявками
             </div>
-            <div class="admin-table-block">
+            <div style="overflow-x: scroll;" class="admin-table-block">
                 @if (count($errors) > 0)
                     @foreach ($errors->all() as $error)
                         <div class="alert alert-danger" role="alert">{{ $error }}</div>
@@ -27,7 +27,7 @@
                     </div>
                 </form>
                 @if(!empty($orders) && !is_string($orders))
-                    <table border="1" bordercolor="#ddddd">
+                    <table style="min-width: 700px" border="1" bordercolor="#ddddd">
                         <tr>
                             <th>№</th>
                             <th>Имя</th>
