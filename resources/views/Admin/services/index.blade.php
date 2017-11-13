@@ -12,7 +12,7 @@
                     <div class="row">
                         @if(!empty($services))
                             @foreach($services as $service)
-                                <div class="col-6 mt-3">
+                                <div class="col-md-6 col-12 mt-3">
                                         <h4>{{ $service->name }}</h4>
                                         <p>{{ $service->description }}</p>
                                         <img class="w-100" src="{{ asset("images/$service->image") }}">

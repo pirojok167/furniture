@@ -12,7 +12,7 @@
                     <div class="row">
                         @if(!$materials->isEmpty())
                             @foreach($materials as $material)
-                                <div class="col-4 mt-3">
+                                <div class="col-lg-4 col-sm-6 col-12 mt-3">
                                     <div class="p-2" style="background-color: #f0f0f0;border-radius: 2px">
                                         <p class="text-center mb-2">{{ $material->name }}</p>
                                         <img class="w-100" style="height: 194px;object-fit: cover" src="{{ asset("images/$material->image")}}">
@@ -23,10 +23,10 @@
                                             <div class="row mt-2">
                                                 <div class="col-6">
                                                     <input type="submit" name="delete" id="" value="Удалить"
-                                                           class="btn btn-block btn-remove">
+                                                           class="btn btn-block btn-sm btn-remove">
                                                 </div>
                                                 <div class="col-6">
-                                                    <a class="btn btn-block btn-edit"
+                                                    <a class="btn btn-block btn-sm btn-edit"
                                                        href="{{ route('admin.materials.edit', ['id' => $material->id]) }}">Редактировать</a>
                                                 </div>
                                             </div>

@@ -20,7 +20,7 @@
                     @endif
                     <div class="row">
                         @if(isset($making) && !empty($making))
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <form action="{{ route('admin.making.update', ['id' => $making]) }}" method="post"
                                       enctype="multipart/form-data">
                                     {{ csrf_field() }}
@@ -42,7 +42,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <p>Изображения:</p>
                                 <form action="{{ route('admin.makingDeletImage') }}" method="post">
                                     {{ csrf_field() }}
@@ -62,7 +62,7 @@
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
-                            <div class="col-12 d-flex">
+                            <div class="col-12 mt-3 d-flex">
                                 <form class="d-inline-block ml-auto"
                                       action="{{ route('admin.making.destroy', ['id' => $making->id]) }}">
                                     {{ csrf_field() }}

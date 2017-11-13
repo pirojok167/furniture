@@ -1,10 +1,15 @@
 $(".phone").mask("+7 (999) 999-99-99");
 $(document).ready(function () {
-    $('#header').scrollToFixed();
-    $('.post').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated fadeIn',
-        offset: 100
-    });
+
+    if($("#header").val()!=undefined){
+        $('#header').scrollToFixed();
+    };
+    if($(".post").val()!=undefined) {
+        $('.post').addClass("hidden").viewportChecker({
+            classToAdd: 'visible animated fadeIn',
+            offset: 100
+        });
+    }
     // $('.post-2').addClass("hidden").viewportChecker({
     //     classToAdd: 'visible animated fadeInLeft',
     //     offset: 100
