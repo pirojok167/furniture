@@ -20,7 +20,7 @@
                     @endif
                     <div class="row">
                         @if(isset($making) && !empty($making))
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <form action="{{ route('admin.making.update', ['id' => $making]) }}" method="post"
                                       enctype="multipart/form-data">
                                     {{ csrf_field() }}
@@ -34,17 +34,21 @@
                                     <div class="form-group">
                                         <label class="mb-0">Заменить изображения</label>
                                         <br>
+<<<<<<< HEAD
 
                                             <input type="file" name="images[]" multiple class="custom-file-input">
 
+=======
+                                            <input type="file" name="images[]" multiple >
+>>>>>>> 9262904ab0b2d3bae99429e0f5996c7ff36aed52
                                     </div>
                                     <div class="form-group">
-                                        <input class="btn btn-yellow-custom" type="submit" value="Изменить"
+                                        <input class="btn btn-edit" type="submit" value="Изменить"
                                                name="submit" id="">
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <p>Изображения:</p>
                                 <form action="{{ route('admin.makingDeletImage') }}" method="post">
                                     {{ csrf_field() }}
@@ -64,13 +68,13 @@
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
-                            <div class="col-12 d-flex">
+                            <div class="col-12 mt-3 d-flex">
                                 <form class="d-inline-block ml-auto"
                                       action="{{ route('admin.making.destroy', ['id' => $making->id]) }}" method="post">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <input class="btn btn-danger" type="submit" name="submit" id="" value="Удалить">
-                                    <a class="btn btn-primary" href="{{ route('admin.making.index') }}">Назад</a>
+                                    <input class="btn btn-remove" type="submit" name="submit" id="" value="Удалить">
+                                    <a class="btn btn-show" href="{{ route('admin.making.index') }}">Назад</a>
                                 </form>
                             </div>
                         @endif

@@ -35,10 +35,7 @@
                                      src="{{ asset("images/$material->image")}}">
                             </div>
                             <div class="form-group">
-                                <label class="custom-file">
-                                    <input type="file" name="image" class="custom-file-input">
-                                    <span class="custom-file-control"></span>
-                                </label>
+                                    <input type="file" name="image">
                             </div>
                             <div class="form-group">
                                 <input class="btn btn-danger" type="submit" id="" value="Добавить">

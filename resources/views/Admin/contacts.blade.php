@@ -36,7 +36,7 @@
                             </label>
                         </div>
                         <div class="form-group">
-                            <input class="btn btn-yellow-custom" type="submit" name="submit" id="" value="Сохранить">
+                            <input class="btn btn-edit" type="submit" name="submit" id="" value="Изменить">
                         </div>
                     </form>
                 </div>

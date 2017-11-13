@@ -28,7 +28,7 @@
                                 </label>
                             </div>
                             <div class="form-group">
-                                <input class="btn btn-yellow-custom" type="submit" name="" id="" value="Изменить">
+                                <input class="btn btn-edit" type="submit" name="" id="" value="Изменить">
                             </div>
                         </form>
                         <form action="{{ route('admin.changePassword') }}" method="post">
@@ -44,7 +44,7 @@
                                 </label>
                             </div>
                             <div class="form-group">
-                                <input class="btn btn-yellow-custom" type="submit" name="" id="" value="Изменить">
+                                <input class="btn btn-edit" type="submit" name="" id="" value="Изменить">
                             </div>
                         </form>
                     @endif

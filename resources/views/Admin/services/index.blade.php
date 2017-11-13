@@ -12,7 +12,7 @@
                     <div class="row">
                         @if(!empty($services))
                             @foreach($services as $service)
-                                <div class="col-6">
+                                <div class="col-md-6 col-12 mt-3">
                                         <h4>{{ $service->name }}</h4>
                                         <p>{{ $service->description }}</p>
                                         <img class="w-100" src="{{ asset("images/$service->image") }}">
@@ -20,8 +20,8 @@
                                           method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <a class="btn btn-yellow-custom ml-auto" href="{{ route('admin.services.edit', ['id' => $service->id]) }}">Редактировать</a>
-                                        <input type="submit" value="Удалить" class="btn btn-danger ml-2">
+                                        <a class="btn btn-edit ml-auto" href="{{ route('admin.services.edit', ['id' => $service->id]) }}">Редактировать</a>
+                                        <input type="submit" value="Удалить" class="btn btn-remove ml-2">
                                     </form>
                                 </div>
                             @endforeach

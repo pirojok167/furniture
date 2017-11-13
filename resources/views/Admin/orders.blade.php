@@ -7,7 +7,7 @@
                 <i class="fa fa-handshake-o" aria-hidden="true"></i>
                 Управление заявками
             </div>
-            <div class="admin-table-block">
+            <div style="overflow-x: scroll;" class="admin-table-block">
                 @if (count($errors) > 0)
                     @foreach ($errors->all() as $error)
                         <div class="alert alert-danger" role="alert">{{ $error }}</div>
@@ -27,7 +27,7 @@
                     </div>
                 </form>
                 @if(!empty($orders) && !is_string($orders))
-                    <table border="1" bordercolor="#ddddd">
+                    <table style="min-width: 700px" border="1" bordercolor="#ddddd">
                         <tr>
                             <th>№</th>
                             <th>Имя</th>
@@ -46,7 +46,7 @@
                                 <td>{{ $order->phone }}</td>
                                 <td style="max-width: 500px">{{ $order->comment ?? 'Нет комментария' }}</td>
                                 <td>{{ $order->created_at }}</td>
-                                <td><a class="btn btn-danger btn-sm pointer"
+                                <td><a class="btn btn-remove btn-sm pointer"
                                        href="{{ route('admin.deleteOrder', ['id' => $order->id]) }}">Удалить</a></td>
                                 <td>
                                     <form action="{{ route('admin.addNote', ['id' => $order->id]) }}" method="post">
@@ -56,7 +56,7 @@
                                                       placeholder="Заметка">{{ $order->note }}</textarea>
                                         </div>
                                         <div class="form-group text-center">
-                                            <input class="btn btn-yellow-custom " type="submit"
+                                            <input class="btn btn-edit " type="submit"
                                                    value="{{ $order->note ? 'Изменить' : 'Добавить' }}">
                                         </div>
                                     </form>

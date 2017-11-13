@@ -38,7 +38,7 @@
                     </a>
                 </p>
                 <div class="clearfix"></div>
-                <p class="m-0"><span class="big">Email: </span>{{ $contacts->email ?? '' }}</p>
+                <p class="mb-3"><span class="big">Email: </span>{{ $contacts->email ?? '' }}</p>
             </div>
             @endif
             <div class="col-md-7 mb-5 col-sm-12 post">
