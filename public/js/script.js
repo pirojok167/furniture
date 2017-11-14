@@ -1,6 +1,13 @@
 $(".phone").mask("+7 (999) 999-99-99");
 $(document).ready(function () {
-
+    $(".admin-toggle-menu").on("click", function (e) {
+        if($(".admin-main-fluid").attr("style")==="transform: translateX(255px);"){
+            $(".admin-main-fluid").css({"transform":"translateX(0)"});
+        }
+        else{
+            $(".admin-main-fluid").css({"transform":"translateX(255px)"});
+        }
+    });
     if($("#header").val()!=undefined){
         $('#header').scrollToFixed();
     };

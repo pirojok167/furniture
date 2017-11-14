@@ -338,6 +338,40 @@ width: 400px;
 .item,.owl-item, .owl-stage, .owl-stage-outer{
   height: 100%;
 }
+.slidebar-menu{
+  position: fixed;
+  top: 0;
+  left:0;
+  bottom: 0;
+  width: 255px;
+  z-index:-999999;
+  ul{
+    li{
+      width:100%;
+      a{
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+        color:#fff;
+        i{
+          margin-right:10px;
+        }
+        &:hover{
+          background-color: #616163;
+          color: #EDA316;
+        }
+      }
+    }
+  }
+}
+.admin-main-fluid{
+  z-index: 99999;
+  transition: .3s;
+  box-shadow:-5px 0px 8px 0px rgba(0,0,0, 0.2);
+}
+
+
+
 
 
 
@@ -639,13 +673,4 @@ body {
   scrollbar-shadow-color: #1abc9c;
   scrollbar-dark-shadow-color: #1abc9c;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.icon {
-  display: inline-block;
-  width: 5vw;
-  height: 4vw;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
 }

@@ -1,8 +1,8 @@
 @extends('admin.layouts.master')
 @section('content')
     <div class="container-fluid bg-beige pt-4" style="padding-bottom: 100px; min-height: 100vh">
-        <div class="container">
-            <div class="bg-metall admin-main">
+        <div class="container d-flex">
+            <div class="bg-metall admin-main m-auto">
                 <div class="admin-main-title">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                     Управление контактами
