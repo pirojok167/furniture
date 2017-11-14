@@ -56,7 +56,7 @@
                                                       placeholder="Заметка">{{ $order->note }}</textarea>
                                         </div>
                                         <div class="form-group text-center">
-                                            <input class="btn btn-edit " type="submit"
+                                            <input class="btn btn-edit btn-sm" type="submit"
                                                    value="{{ $order->note ? 'Изменить' : 'Добавить' }}">
                                         </div>
                                     </form>

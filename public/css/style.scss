@@ -344,12 +344,12 @@ width: 400px;
   left:0;
   bottom: 0;
   width: 255px;
-  z-index:-999999;
+  z-index:0;
   ul{
     li{
       width:100%;
       a{
-        padding: 10px;
+        padding: 10px 20px;
         display: block;
         text-decoration: none;
         color:#fff;
@@ -365,7 +365,8 @@ width: 400px;
   }
 }
 .admin-main-fluid{
-  z-index: 99999;
+  position: relative;
+  z-index: 1;
   transition: .3s;
   box-shadow:-5px 0px 8px 0px rgba(0,0,0, 0.2);
 }

@@ -38,8 +38,9 @@
                                     <input type="file" name="image">
                             </div>
                             <div class="form-group">
-                                <input class="btn btn-danger" type="submit" id="" value="Добавить">
-                                <a class="btn btn-primary" href="{{ route('admin.materials.index') }}">Отменить</a>
+                                <input class="btn btn-edit" type="submit" id="" value="Изменить">
+                                <a class="btn btn-remove" href="">Удалить</a>
+                                <a class="btn btn-show" href="{{ route('admin.materials.index') }}">Отмена</a>
                             </div>
                         </form>
                     @endif

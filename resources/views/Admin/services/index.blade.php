@@ -8,11 +8,11 @@
                     Управление услугами
                 </div>
                 <div class="admin-table-block">
-                    <a class="btn btn-yellow-custom mb-3" href="{{ route('admin.services.create') }}">Добавить услугу</a>
-                    <div class="row">
+                    <a class="btn btn-show mb-3" href="{{ route('admin.services.create') }}">Добавить услугу</a>
+                    <div class="row elements-gride">
                         @if(!empty($services))
                             @foreach($services as $service)
-                                <div class="col-md-6 col-12 mt-3">
+                                <div class="col-md-6 col-12 mt-3 element-item">
                                         <h4>{{ $service->name }}</h4>
                                         <p>{{ $service->description }}</p>
                                         <img class="w-100" src="{{ asset("images/$service->image") }}">

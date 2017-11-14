@@ -8,7 +8,7 @@
                     Управление материалами
                 </div>
                 <div class="admin-table-block">
-                    <a class="btn btn-yellow-custom" href="{{ route('admin.materials.create') }}">Добавить материал</a>
+                    <a class="btn btn-show" href="{{ route('admin.materials.create') }}">Добавить материал</a>
                     <div class="row">
                         @if(!$materials->isEmpty())
                             @foreach($materials as $material)

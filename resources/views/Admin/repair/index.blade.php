@@ -10,7 +10,7 @@
                 <div style="overflow: hidden" class="admin-table-block">
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <a class="btn btn-yellow-custom ml-auto" href="{{ route('admin.repair.create') }}">Добавить
+                            <a class="btn btn-show ml-auto" href="{{ route('admin.repair.create') }}">Добавить
                                 работу</a>
                         </div>
                         @if(!$repairs->isEmpty())

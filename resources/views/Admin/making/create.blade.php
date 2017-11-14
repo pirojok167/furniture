@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <input class="btn btn-show" type="submit" name="submit" id="" value="Добавить">
-                            <a class="btn btn-remove" href="{{ route('admin.making.index') }}">Отменить</a>
+                            <a class="btn btn-remove" href="{{ route('admin.making.index') }}">Отменa</a>
                         </div>
                     </form>
                 </div>

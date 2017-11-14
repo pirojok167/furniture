@@ -53,6 +53,7 @@
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <input type="submit" value="Удалить" class="btn btn-remove">
+                            <a class="btn btn-show ml-2" href="">Отмена</a>
                         </form>
                     @endif
                 </div>

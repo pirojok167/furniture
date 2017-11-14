@@ -5,7 +5,7 @@
             <img class="d-none d-md-block" style="height: 24px;" src="../images/templates/logo.png" alt="">
         </div>
         <form class="ml-auto d-none d-md-block" action="{{ route('logout') }}" method="POST">
-            <input class="btn btn-danger btn-sm" type="submit" value="Выйти">
+            <input class="btn btn-remove btn-sm" type="submit" value="Выйти">
             {{ csrf_field() }}
         </form>
     </div>
@@ -19,7 +19,6 @@
         </button>
 </div>
 <div class="container">
-
     <ul class="admin-main-menu d-none d-md-block">
         <li><a href="{{ route('admin.admin') }}">Главная</a></li>
         <li><a href="{{ route('admin.orders') }}">Заявки</a></li>

@@ -8,7 +8,7 @@
                     Управление изготовлениями
                 </div>
                 <div class="admin-table-block">
-                    <a class="btn btn-yellow-custom" href="{{ route('admin.making.create') }}">Добавить изделие</a>
+                    <a class="btn btn-show" href="{{ route('admin.making.create') }}">Добавить изделие</a>
                     <div class="row">
                         @if(!$makings->isEmpty())
                             @foreach($makings as $making)
