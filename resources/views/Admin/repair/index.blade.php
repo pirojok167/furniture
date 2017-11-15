@@ -62,8 +62,13 @@
                             @endforeach
                         @endif
                     </div>
+                    @if(isset($paginate) && !empty($paginate))
+                        {!! $paginate !!}
+                    @endif
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('paginate')
 @endsection

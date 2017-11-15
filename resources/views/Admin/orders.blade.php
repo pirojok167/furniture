@@ -1,7 +1,6 @@
 @extends('admin.layouts.master')
 @section('content')
     <div class="container-fluid bg-beige pt-4" style="padding: 30px 30px 100px 30px; min-height: 100vh">
-
         <div class="bg-metall admin-main">
             <div class="admin-main-title">
                 <i class="fa fa-handshake-o" aria-hidden="true"></i>
@@ -67,7 +66,12 @@
                 @elseif(is_string($orders))
                     <p>{{ $orders }}</p>
                 @endif
+                    @if(isset($paginate) && !empty($paginate))
+                        {!! $paginate !!}
+                    @endif
             </div>
         </div>
     </div>
+@endsection
+@section('paginate')
 @endsection
