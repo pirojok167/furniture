@@ -34,13 +34,9 @@
                                     <div class="form-group">
                                         <label class="mb-0">Заменить изображения</label>
                                         <br>
-<<<<<<< HEAD
-
                                             <input type="file" name="images[]" multiple class="custom-file-input">
 
-=======
                                             <input type="file" name="images[]" multiple >
->>>>>>> 9262904ab0b2d3bae99429e0f5996c7ff36aed52
                                     </div>
                                     <div class="form-group">
                                         <input class="btn btn-edit" type="submit" value="Изменить"

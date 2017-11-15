@@ -37,9 +37,9 @@
                                 <label>Пароль:
                                     <input class="form-control mb-2" type="password" name="old_password" id=""
                                            placeholder="Старый пароль">
-                                    <input class="form-control mb-2" type="password" name="new_password" id=""
+                                    <input class="form-control mb-2" type="password" name="password" id=""
                                            placeholder="Новый пароль">
-                                    <input class="form-control mb-2" type="password" name="confirm_password" id=""
+                                    <input class="form-control mb-2" type="password" name="password_confirmation" id=""
                                            placeholder="Повторите пароль">
                                 </label>
                             </div>

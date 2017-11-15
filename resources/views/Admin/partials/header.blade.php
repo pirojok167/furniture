@@ -20,14 +20,13 @@
 </div>
 <div class="container">
     <ul class="admin-main-menu d-none d-md-block">
-        <li><a href="{{ route('admin.admin') }}">Главная</a></li>
-        <li><a href="{{ route('admin.orders') }}">Заявки</a></li>
-        <li><a href="{{ route('admin.repair.index') }}">Перетяжка</a></li>
-        <li><a href="{{ route('admin.making.index') }}">Изготовление</a></li>
-        <li><a href="{{ route('admin.services.index') }}">Услуги</a></li>
-        <li><a href="{{ route('admin.materials.index') }}">Материалы</a></li>
-        <li><a href="{{ route('admin.contacts.index') }}">Контакты</a></li>
-        <li><a href="{{ route('admin.getProfile') }}">Профиль</a></li>
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.orders') ? 'bg-beige' : '' }}"  href="{{ route('admin.orders') }}">Заявки</a></li>
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.repair.index' || Route::CurrentRouteName() === 'admin.repair.create') ? 'bg-beige' : '' }}" href="{{ route('admin.repair.index') }}">Перетяжка</a></li>
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.making.index' || Route::CurrentRouteName() === 'admin.making.edit' || Route::CurrentRouteName() === 'admin.making.create') ? 'bg-beige' : '' }}" href="{{ route('admin.making.index') }}">Изготовление</a></li>
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.services.index' || Route::CurrentRouteName() === 'admin.services.edit' || Route::CurrentRouteName() === 'admin.services.create') ? 'bg-beige' : '' }}" href="{{ route('admin.services.index') }}">Услуги</a></li>
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.materials.index' || Route::CurrentRouteName() === 'admin.materials.create') ? 'bg-beige' : '' }}" href="{{ route('admin.materials.index') }}">Материалы</a></li>
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.contacts.index') ? 'bg-beige' : '' }}" href="{{ route('admin.contacts.index') }}">Контакты</a></li>
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.getProfile') ? 'bg-beige' : '' }}" href="{{ route('admin.getProfile') }}">Профиль</a></li>
     </ul>
     <div class="clearfix"></div>
 </div>

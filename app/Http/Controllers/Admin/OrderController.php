@@ -41,6 +41,19 @@ class OrderController extends Controller
 	public function addNote(Request $request, $order_id)
 	{
 		$order = Order::find($order_id);
+		$messages = [
+			'required' => 'Поле с заметкой не должно быть пустым',
+			'string' => 'Поле с заметкой должнобыть строкой',
+			'max' => 'Максимальное количество символов - 255',
+		];
+		$validator = \Validator::make($request->all(), [
+			'note' => 'required|string|max:255',
+		], $messages);
+
+		if ($validator->fails()) {
+			return redirect()->back()->withErrors($validator->errors());
+		}
+
 		$order->note = $request->input('note');
 		$result = $order->save() ? 'Заметка сохранена' : 'Ошибка';
 		return redirect()->back()->with('result', $result);

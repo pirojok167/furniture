@@ -50,14 +50,20 @@ class Image extends Model
 		$files = $request->file('images');
 		if (is_array($files)) {
 			foreach ($files as $file) {
-				if ($file->isValid()) {
-//						$name = $file->getClientOriginalName();
-					\Storage::disk('images')->putFile("$dir/$id", $file);
+				$mimeType = $file->getMimeType();
+				if (($mimeType === "image/gif") || ($mimeType === "image/png") || ($mimeType === "image/jpeg"))
+				{
+					if ($file->isValid())
+						\Storage::disk('images')->putFile("$dir/$id", $file);
+					$result = 'Изделие добавлено';
+				} else {
+					$result = ['error' => 'Изображения должны быть с расширением gif, jpeg (jpg) или png'];
 				}
 			}
-			return true;
+		} else {
+			$result = ['error' => 'Ошибка добавления изображений'];
 		}
-		return false;
+		return $result;
 	}
 	public static function getImage($id)
 	{

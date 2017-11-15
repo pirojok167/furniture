@@ -53,8 +53,12 @@ class MakingController extends Controller
 	    $result = $making->fill($data)->save();
 
 	    if ($result) {
-		    $result = Image::saveImages($request, 'makings', $making->id) ? 'Изделие добавлено' : 'Ошибка';
+		    $result = Image::saveImages($request, 'makings', $making->id);
 	    }
+		if (!empty($result['error']))
+			$making->delete($making->id);
+	    if (!empty($result['error']))
+	    	return redirect()->back()->withErrors($result);
 
         return redirect()->route('admin.making.index')->with('result', $result);
     }

@@ -35,14 +35,24 @@ class UserController extends Controller
 	{
 		$profile = User::first();
 		$data = $request->except('_token');
-		if (!\Hash::check($profile->password, bcrypt($data['new_password']))) {
-			if (\Hash::check($profile->password, bcrypt($data['old_password']))
-				|| $data['old_password'] !== $data['confirm_password']) {
-				$password = \Hash::make($data['new_password']);
-				$profile->password = $password;
-				$result = $profile->save() ? 'Пароль изменён' : 'Ошибка';
-			} else $result = 'Пароли не совпадают';
-		} else $result = 'Вы ввели действующий пароль';
+		$this->validate($request, [
+			'old_password' => 'required',
+			'password' => 'required|min:6',
+			'password_confirmation' => 'required|min:6',
+		]);
+
+		if (\Hash::check($profile->password, bcrypt($data['old_password']))) {
+			return redirect()->route('admin.getProfile')->with('result', 'Вы ввели действующий пароль');
+		}
+
+		if ($data['password'] !== $data['password_confirmation']) {
+			$result = 'Пароль для подтверждения и новый парль не совпадают';
+			return redirect()->route('admin.getProfile')->with('result', $result);
+		}
+
+		$password = \Hash::make($data['password']);
+		$profile->password = $password;
+		$result = $profile->save() ? 'Пароль изменён' : 'Ошибка';
 
 		return redirect()->route('admin.getProfile')->with('result', $result);
 	}

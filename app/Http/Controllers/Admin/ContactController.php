@@ -69,10 +69,21 @@ class ContactController extends Controller
 		$data = $request->except('_token');
 
         $this->validate($request, [
-        	'phone_1' => 'string|max:255|required',
-        	'phone_2' => 'string|max:255|',
+        	'phone_1' => 'required',
 	        'email' => 'email|required',
         ]);
+
+	    $pattern = "#^(?:\+7|8)?(\s?|\-?)\(?(?:\d{3})?\)?(\s|\-)?\d{3}(?:\-?\d{2}){2}$#";
+	    if (!empty($data['phone_1'])) {
+		    if (!preg_match($pattern, $data['phone_1'])) {
+			    return redirect()->back()->withErrors('Некорректный номер телефона');
+		    }
+	    }
+	    if (!empty($data['phone_2'])) {
+		    if (!preg_match($pattern, $data['phone_2'])) {
+			    return redirect()->back()->withErrors('Некорректный номер телефона');
+		    }
+	    }
 
 		if ($data['phone_1'] !== $contacts->phone_1)
 			$contacts->phone_1 = $data['phone_1'];

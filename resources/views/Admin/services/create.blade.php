@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <input class="btn btn-show" type="submit" value="Добавить">
-                            <a class="btn btn-remove ml-2" href="">Отмена</a>
+                            <a class="btn btn-remove ml-2" href="{{ route('admin.services.index') }}">Отмена</a>
                         </div>
                     </form>
                 </div>

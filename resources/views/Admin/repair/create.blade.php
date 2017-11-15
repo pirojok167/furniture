@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-12 mt-4">
                                 <input class="pointer btn btn-show" type="submit" value="Добавить">
-                                <a class="btn btn-remove ml-2" href="">Отмена</a>
+                                <a class="btn btn-remove ml-2" href="{{ route('admin.repair.index') }}">Отмена</a>
                             </div>
                         </div>
                     </form>
