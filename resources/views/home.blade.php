@@ -171,29 +171,29 @@
                 <div class="row mt-5 mb-5">
                     <div class="ml-lg-auto col-lg-2 col-md-3 col-sm-4 col-6">
                         <p class="text-center">Шаг 1.</p>
-                        <img class="w-100" src="../images/templates/circle_1.png" alt="заявка на ремонт">
+                        <img class="w-100 img-steps" src="../images/templates/circle_1.png" alt="заявка на ремонт">
                         <div class="text-center mt-2">Позвоните нам или оставьте заявку, и мы свяжемся с вами
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                         <p class="text-center">Шаг 2.</p>
-                        <img class="w-100" src="../images/templates/circle_2.png" alt="замеры дивана">
+                        <img class="w-100 img-steps" src="../images/templates/circle_2.png" alt="замеры дивана">
                         <div class="text-center mt-2">Произведём замеры</div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mt-3 mt-sm-0">
                         <p class="text-center">Шаг 3.</p>
-                        <img class="w-100" src="../images/templates/circle_3.png" alt="стоимость ремонта дивана">
+                        <img class="w-100 img-steps" src="../images/templates/circle_3.png" alt="стоимость ремонта дивана">
                         <div class="text-center mt-2">Определим стоимость работ и материалов</div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mt-3 mt-md-0">
                         <p class="text-center">Шаг 4.</p>
-                        <img class="w-100" src="../images/templates/circle_4.png" alt="ремонт дивана">
+                        <img class="w-100 img-steps" src="../images/templates/circle_4.png" alt="ремонт дивана">
                         <div class="text-center mt-2">Отремонтируем Ваш диван
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mr-lg-auto mt-3 mt-lg-0">
                         <p class="text-center">Шаг 5.</p>
-                        <img class="w-100" src="../images/templates/circle_5.png" alt="оплата ремонта дивана">
+                        <img class="w-100 img-steps" src="../images/templates/circle_5.png" alt="оплата ремонта дивана">
                         <div class="text-center mt-2">Акт о приёмке выполненных работ и оплата</div>
                     </div>
                 </div>

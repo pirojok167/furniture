@@ -253,6 +253,11 @@ footer {
     border-left: 10px solid #fbfbfb;
     left: 0; }
 
+.img-steps {
+  transition: .3s; }
+  .img-steps:hover {
+    transform: rotate(360deg); }
+
 .nav-link.active {
   background-color: #fff;
   transition: .3s; }
