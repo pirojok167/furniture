@@ -42,7 +42,7 @@
                                      alt="{{ $service->name }}">
                             </div>
                             <div class="form-group">
-                                <input type="file" name="image">
+                                <input type="file" name="image" value="{{ $service->image }}">
                             </div>
                             <div class="form-group">
                                 <input class="btn btn-edit fl" type="submit" value="Изменить">

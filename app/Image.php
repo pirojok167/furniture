@@ -37,12 +37,12 @@ class Image extends Model
 					'image_2' => 'image',
 				]);
 
-				if ($validator->fails()) return false;
+				if ($validator->fails()) return ['error' => 'Изображения должны быть с расширением gif, jpeg (jpg) или png'];
 
 				$image = \Storage::disk('images')->putFile($dir, $file);
 				return $image;
 			}
-		return false;
+		return ['errors' => 'Вы не выбрали изображение'];
 	}
 
 	public static function saveImages($request, $dir, $id)

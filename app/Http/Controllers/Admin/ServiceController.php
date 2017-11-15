@@ -42,6 +42,9 @@ class ServiceController extends Controller
 	    $request->flash();
 
 	    $image = Image::saveImage($request,'services');
+	    if (!empty($image['error']) || !empty($image['errors'])) {
+		    return redirect()->back()->withErrors($image);
+	    }
 	    $data['image'] = $image;
 
         $service = new Service();
@@ -85,13 +88,14 @@ class ServiceController extends Controller
 	    $data = Service::validate($request);
 
 	    $image = Image::saveImage($request, 'services');
-
-	    if ($image != false) {
-			Image::destroyImage($service->image);
+	    if (!empty($image['error'])) {
+		    return redirect()->back()->withErrors($image);
+	    } elseif($request->hasFile('image')) {
+		    Image::destroyImage($service->image);
 		    $data['image'] = $image;
-		}
-
-//	    $data['image'] = $image ?? $service->image;
+	    } else {
+		    $data['image'] = $service->image;
+	    }
 
 	    if ($data['name'] !== $service->name
 		    || $data['description'] !== $service->description

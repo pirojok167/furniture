@@ -21,7 +21,7 @@ class UserController extends Controller
 
 		if ($email !== $profile->email) {
 			$this->validate($request, [
-				'email' => 'email'
+				'email' => 'required|email'
 			]);
 
 			$profile->email = $email;

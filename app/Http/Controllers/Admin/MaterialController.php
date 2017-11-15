@@ -40,8 +40,13 @@ class MaterialController extends Controller
     {
         $data = $request->except('_token', 'image');
         $request->flash();
+
         $this->validate($request, ['name' => 'string|max:255|required']);
+
         $image = Image::saveImage($request, 'materials');
+	    if (!empty($image['error']) || !empty($image['errors'])) {
+		    return redirect()->back()->withErrors($image);
+	    }
 
         $material = new Material();
 	    if ($image) {
@@ -92,9 +97,14 @@ class MaterialController extends Controller
 	    $this->validate($request, ['name' => 'string|max:255|required']);
 
 	    $image = Image::saveImage($request, 'materials');
-	    if ($image)	{
+
+	    if (!empty($image['error'])) {
+		    return redirect()->back()->withErrors($image);
+	    } elseif($request->hasFile('image')) {
 		    Image::destroyImage($material->image);
-	    	$material->image = $image;
+		    $material->image = $image;
+	    } else {
+		    $material->image = $material->image;
 	    }
 
 	    $result = $material->fill($data)->save() ? 'Материал добавлен' : 'Ошибка';
