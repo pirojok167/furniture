@@ -225,6 +225,15 @@ footer{
 }
 .special-title{
   position: relative;
+  @media (max-width: 767px) {
+    &::after{
+      border:none!important;
+    }
+    &::before{
+      border:none!important;
+    }
+  }
+
   &::after{
     content: '';
     position: absolute;
@@ -240,6 +249,7 @@ footer{
     left: 0;
   }
 }
+
 .nav-link.active{
   background-color: #fff;
   transition: .3s;

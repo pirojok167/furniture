@@ -234,6 +234,11 @@ footer {
 
 .special-title {
   position: relative; }
+  @media (max-width: 767px) {
+    .special-title::after {
+      border: none !important; }
+    .special-title::before {
+      border: none !important; } }
   .special-title::after {
     content: '';
     position: absolute;

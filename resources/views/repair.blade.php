@@ -67,7 +67,7 @@
     </div>
     <div class="container-fluid bg">
         <div class="container pb-5 pt-4 bg-wrapper">
-            <h1 class="text-center mb-5" style="font-family: 'Alice', serif;">Перетяжка</h1>
+            <h1 class="text-center mb-5" style="font-family: 'Alice', serif;">Перетяжка и ремонт мягкой мебели</h1>
             <div class="row repairs-blocks">
                 @if(!$repairs->isEmpty())
                     @foreach($repairs as $repair)
@@ -77,7 +77,7 @@
                                     <div class="col-sm-5 col-12 pr-sm-0">
                                         <img class="forModal pointer"
                                              style="height: 180px; object-fit: cover; width: 100%;"
-                                             src="{{ asset("images/$repair->image_1") }}" alt="До">
+                                             src="{{ asset("images/$repair->image_1") }}" alt="До перетяжки дивана">
                                     </div>
                                     <div class="col-sm-2 col-12 p-sm-0 pt-3 pb-3 d-flex">
                                         <img class="icon icons8-Стрелка-Filled m-auto" style="32" height="32"
@@ -86,17 +86,9 @@
                                     <div class="col-sm-5 col-12 pl-sm-0">
                                         <img class="forModal pointer"
                                              style="height: 180px; object-fit: cover; width: 100%"
-                                             src="{{ asset("images/$repair->image_2") }}" alt="После">
+                                             src="{{ asset("images/$repair->image_2") }}" alt="После перетяжки дивана">
                                     </div>
                                 </div>
-                                {{--<img class="forModal pointer"--}}
-                                     {{--style="height: 180px; object-fit: cover; width: 100%;"--}}
-                                     {{--src="{{ asset("images/$repair->image_1") }}" alt="До">--}}
-                                {{--<img class="icon icons8-Стрелка-Filled pointer" style="32" height="32"--}}
-                                     {{--src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABV0lEQVRYR+2WTVKDQBSEe4YF3kZvYNzGn8gN4Aaw0WSlu+hKvEE8gcEq0WWOEG6QI4RFssu0RUpSUTEwFIHSgi3vzfuqp5uHQMOPaHg+WoBWgf+hwF3QHYOgyaXjWZO5TrIqUWAYdCcC4hjkTBLWlRVOi0JUC5BMJeaU9AYX4agIRPUA6VRyZHLp5V3J/gDWanAqCWfXlXwBGD6fdQxjxSLSbdcoJXwIcZTZR8yFoZzr87dx1vsNwP3LqUviQXe4Rr3f77163+s3AMOgeysgbjQO1C8lp6SyBtb7LG2uF+AzJZI8SX3RAABjSXSaAohMtehsR7NGE/Kx3wvdX02YvEhiqO8sQEj6AA6zY8hYGLRzY1hmcNqz2QU/D4moVpfbrt+pQFmILAACTwdq4db/KSZjSrhNLaNIKtq1r+P1DwkAUy3tPMn34oGy3kn6KlnHLUCrwJ9W4AP06KIh27uXRQAAAABJRU5ErkJggg==">--}}
-                                {{--<img class="forModal pointer"--}}
-                                     {{--style="height: 180px; object-fit: cover; width: 100%"--}}
-                                     {{--src="{{ asset("images/$repair->image_2") }}" alt="После">--}}
                             </div>
                         </div>
                     @endforeach

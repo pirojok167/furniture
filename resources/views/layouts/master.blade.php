@@ -5,6 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Перетяжка и ремонт мягкой мебели в Воронеже: диваны, кресла,
+                    кухонные уголки, офисная мебель, стулья, пуфики. Изготовление мягкой мебели.">
+    <meta name="keywords" content="перетяжка мягкой мебели в Воронеже, ремонт мягкой мебели в Воронежей, изготовление мягкой мебели, ремонт каркаса, замена наполнителей, замена поролона, замена пружинных блоков"/>
     @include('template.includes')
     <title>Перетяжка и изготовление мягкой мебели в Воронеже</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
