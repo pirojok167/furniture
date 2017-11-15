@@ -1,10 +1,12 @@
 $(".phone").mask("+7 (999) 999-99-99");
-$(document).ready(function () {
+$(window).load(function(){
     if ($('.elements-gride').val() != undefined) {
         $('.elements-gride').masonry({
             itemSelector: '.element-item'
         });
     }
+});
+$(document).ready(function () {
     $(".admin-main-fluid").on("click", function (e) {
         if ($(".admin-main-fluid").attr("style") === "transform: translateX(255px);") {
             $(".admin-main-fluid").css({"transform": "translateX(0)"});
