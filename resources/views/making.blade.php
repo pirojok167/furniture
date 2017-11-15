@@ -18,23 +18,24 @@
         </section>
     </content>
     <nav id="header" class="navbar navbar-expand-lg navbar-light bg-green">
-        <div class="container" >
+        <div class="container">
             <a class="navbar-brand mx-auto ml-lg-0 mr-lg-4" href="/">
-                <img  height="40" src="../images/templates/logo.png">
+                <img alt="Перетяжка и ремонт мягкой мебели в Воронеже" height="40" src="../images/templates/logo.png">
             </a>
             <div class="collapse navbar-collapse" id="navbarTogglerEx">
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white"  href="/#services">Услуги<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="/#services">Услуги<span
+                                    class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href="/#materials">Материалы</a>
+                        <a class="nav-link" href="/#materials">Материалы</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/#order">Как заказать</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white"  href="/#footer">Оставить заявку</a>
+                        <a class="nav-link text-white" href="/#footer">Оставить заявку</a>
                     </li>
                 </ul>
                 <a class="btn btn-green btn-sm ml-3" href="{{ route('repair') }}">Перетяжка</a>
@@ -58,13 +59,15 @@
 @section('content')
     <div class="container-fluid bg">
         <div class="container pb-5 pt-4 bg-wrapper">
-            <h1 class="text-center mb-4" style="font-family: 'Alice', serif;">Изготовление</h1>
+            <h1 class="text-center mb-4" style="font-family: 'Alice', serif;">Изготовление мягкой мебели</h1>
             <ul id="og-grid" class="og-grid">
                 @if(!$makings->isEmpty())
                     @foreach($makings as $making)
                         <li>
-                            <a href="#" data-name="{{ $making->name }}" class="btn-making-gallery" id="{{ $making->id }}">
-                                <img style="height: 250px;width: 250px;object-fit: cover" src="{{ asset("images/$making->image") }}" alt="img01"/>
+                            <a href="#" data-name="{{ $making->name }}" class="btn-making-gallery"
+                               id="{{ $making->id }}">
+                                <img alt="{{ $making->name }}" style="height: 250px;width: 250px;object-fit: cover"
+                                     src="{{ asset("images/$making->image") }}"/>
                             </a>
                         </li>
                     @endforeach
@@ -73,7 +76,7 @@
         </div>
     </div>
     <script>
-        $(function() {
+        $(function () {
             Grid.init();
         });
     </script>

@@ -234,6 +234,11 @@ footer {
 
 .special-title {
   position: relative; }
+  @media (max-width: 767px) {
+    .special-title::after {
+      border: none !important; }
+    .special-title::before {
+      border: none !important; } }
   .special-title::after {
     content: '';
     position: absolute;
@@ -247,6 +252,11 @@ footer {
     border: 21px solid transparent;
     border-left: 10px solid #fbfbfb;
     left: 0; }
+
+.img-steps {
+  transition: .3s; }
+  .img-steps:hover {
+    transform: rotate(360deg); }
 
 .nav-link.active {
   background-color: #fff;

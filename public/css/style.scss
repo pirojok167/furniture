@@ -225,6 +225,15 @@ footer{
 }
 .special-title{
   position: relative;
+  @media (max-width: 767px) {
+    &::after{
+      border:none!important;
+    }
+    &::before{
+      border:none!important;
+    }
+  }
+
   &::after{
     content: '';
     position: absolute;
@@ -238,6 +247,12 @@ footer{
     border: 21px solid transparent;
     border-left: 10px solid #fbfbfb;
     left: 0;
+  }
+}
+.img-steps{
+  transition: .3s;
+  &:hover{
+    transform: rotate(360deg);
   }
 }
 .nav-link.active{
