@@ -178,11 +178,12 @@ $(document).ready(function () {
             for (var i = 0; i < src.length; i++) {
                 var timeVar = "../images/" + src[i];
                 var div2 = document.createElement("div");
-                div2.classList.add("item");
+                div2.classList.add("item", "w-100", "h-100", "d-flex");
                 $(".owl-carousel").append(div2);
                 var img = document.createElement("img");
                 img.src = timeVar;
-                img.style = "height:100%;object-fit:cover;";
+                img.classList.add("m-auto", "img-in-gallery");
+                img.style = "max-height:100%; max-width:100%";
                 $(".item:nth-last-child(1)").append(img);
             }
             var loop;
@@ -199,6 +200,7 @@ $(document).ready(function () {
                 navText: ["", ""],
                 dots: false
             });
+
         });
     });
 });
