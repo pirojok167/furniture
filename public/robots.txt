@@ -8,4 +8,6 @@ Disallow: /logout
 Disallow: /password
 Disallow: /admin
 
+Host: Host: www.masteradivanov.ru
+
 Sitemap: https://www.youtube.com/yt/advertise/sitemap.xml

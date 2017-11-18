@@ -57,17 +57,13 @@
 @section('content')
     <div class="container-fluid bg p-0 pl-sm-3 pr-sm-3">
         <div class="container bg-wrapper pt-4">
-            <h1 class="text-center mb-5" style="font-family: 'Alice', serif;">Перетяжка и изготовление мягкой мебели в
-                Воронеже</h1>
+            <h1 class="text-center mb-5" style="font-family: 'Alice', serif;">{{ $home_info->title ?? 'Перетяжка и изготовление мягкой мебели в Воронеже' }}</h1>
             <div class="row">
                 <div class="col-lg-6 col-12 order-lg-1" style="font-size: 1.3rem">
-                    Перетяжка мягкой мебели: диваны, кресла,
-                    кухонные уголки, офисная мебель, стулья, пуфики. Замена: обивочной ткани, поролона, искусственного
-                    наполнителя (холлофайбер и поролоновая крошка), пружинных блоков и механизмов трансформации. Ремонт
-                    каркаса. Мы работаем в Воронеже и Воронежской области.
+                    {{ $home_info->text ?? 'Перетяжка мягкой мебели' }}
                 </div>
                 <div class="col-lg-6 col-12 order-first order-lg-2">
-                    <img class="img" src="../images/templates/sofa.png" alt="Диван">
+                    <img class="img" src="{{ asset('images').'/'.$home_info->image ?? '../images/templates/sofa.png' }}" alt="Диван">
                 </div>
                 <div class="col-12 mt-4 order-3">
                     <div class="row">

@@ -20,6 +20,7 @@
 </div>
 <div class="container">
     <ul class="admin-main-menu d-none d-md-block">
+        <li><a class="{{ (Route::CurrentRouteName() === 'admin.admin') || Route::CurrentRouteName() === 'admin.edit_admin_home' ? 'bg-beige' : '' }}"  href="{{ route('admin.admin') }}">Главная</a></li>
         <li><a class="{{ (Route::CurrentRouteName() === 'admin.orders') ? 'bg-beige' : '' }}"  href="{{ route('admin.orders') }}">Заявки</a></li>
         <li><a class="{{ (Route::CurrentRouteName() === 'admin.repair.index' || Route::CurrentRouteName() === 'admin.repair.create') ? 'bg-beige' : '' }}" href="{{ route('admin.repair.index') }}">Перетяжка</a></li>
         <li><a class="{{ (Route::CurrentRouteName() === 'admin.making.index' || Route::CurrentRouteName() === 'admin.making.edit' || Route::CurrentRouteName() === 'admin.making.create') ? 'bg-beige' : '' }}" href="{{ route('admin.making.index') }}">Изготовление</a></li>
