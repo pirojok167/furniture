@@ -77,4 +77,75 @@ class Image extends Model
 		!empty($files) ?: $files[] = config('settings.no_image');
 		return $files;
 	}
+
+	public static function image_resize($image_path, $dst, $width, $height, $crop = 0)
+	{
+		if(!list($w, $h) = getimagesize($image_path)) return "Неподдерживаемый тип изображения!";
+
+		$type = strtolower(substr(strrchr($image_path,"."),1));
+		if($type == 'jpeg') $type = 'jpg';
+		switch($type){
+			case 'bmp': $img = imagecreatefromwbmp($image_path); break;
+			case 'gif': $img = imagecreatefromgif($image_path); break;
+			case 'jpg': $img = imagecreatefromjpeg($image_path); break;
+			case 'png': $img = imagecreatefrompng($image_path); break;
+			default : return "Неподдерживаемый тип изображения!";
+		}
+
+		// resize
+		if($crop){
+			if($w < $width or $h < $height) return "Picture is too small!";
+			$ratio = max($width/$w, $height/$h);
+			$h = $height / $ratio;
+			$x = ($w - $width / $ratio) / 2;
+			$w = $width / $ratio;
+		}
+		else{
+			if($w < $width and $h < $height) return "Picture is too small!";
+			$ratio = min($width/$w, $height/$h);
+			$width = $w * $ratio;
+			$height = $h * $ratio;
+			$x = 0;
+		}
+
+		$new = imagecreatetruecolor($width, $height);
+
+		// preserve transparency
+		if($type == "gif" or $type == "png"){
+			imagecolortransparent($new, imagecolorallocatealpha($new, 0, 0, 0, 127));
+			imagealphablending($new, false);
+			imagesavealpha($new, true);
+		}
+
+		imagecopyresampled($new, $img, 0, 0, $x, 0, $width, $height, $w, $h);
+
+		switch($type){
+			case 'bmp': imagewbmp($new, $dst); break;
+			case 'gif': imagegif($new, $dst); break;
+			case 'jpg': imagejpeg($new, $dst); break;
+			case 'png': imagepng($new, $dst); break;
+		}
+		return true;
+
+
+		// задание максимальной ширины и высоты
+		$width = 1280;
+		$height = 1000;
+
+		// получение новых размеров
+		list($width_orig, $height_orig) = getimagesize($filename);
+		$ratio_orig = $width_orig/$height_orig;
+
+		if ($width/$height > $ratio_orig) {
+			$width = $height*$ratio_orig;
+		} else {
+			$height = $width/$ratio_orig;
+		}
+
+		// ресэмплирование
+		$image_p = imagecreatetruecolor($width, $height);
+		$image = imagecreatefromjpeg($filename);
+		imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
+		return $image_p;
+	}
 }

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Furniture'),
+    'name' => env('APP_NAME', 'MasteraDivanov'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://furniture.com'),
+    'url' => env('APP_URL', 'http://masteradivanov.ru/'),
 
     /*
     |--------------------------------------------------------------------------
