@@ -28,10 +28,14 @@ class IndexController extends Controller
 	{
 		$materials = $this->materials->chunk(4);
 		$home_info = Home::first();
+		$contacts = $this->contacts;
+
+		$vowels = [" ", "-","(",")","+"];
+		$contacts->messenger = str_replace($vowels, "", $contacts->phone_1);
 
 		return view('home')->with([
 			'services' => $this->services,
-			'contacts' => $this->contacts,
+			'contacts' => $contacts,
 			'materials_chunk' => $materials,
 			'home_info' => $home_info,
 		]);
