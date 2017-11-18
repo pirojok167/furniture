@@ -5,7 +5,7 @@
         <label class="hamburger m-0" for="hamburger">
             <i></i>
             <text>
-                <close>close</close>
+                <close>закрыть</close>
                 <open>меню</open>
             </text>
         </label>
@@ -94,9 +94,11 @@
                         <div class="col-lg-6 col-12 mb-3 services-block">
                             <div class="w-100 p-2 bg-gray">
                                 <div class="services-overflow">
-                                    <img class="w-100" alt="{{ $service->name }}"
-                                         style="height: 400px;object-fit: cover"
-                                         src="{{ asset("images/$service->image") }}">
+                                    <div style="height: 400px;">
+                                        <img class="w-100" alt="{{ $service->name }}"
+                                             style=""
+                                             src="{{ asset("images/$service->image") }}">
+                                    </div>
                                     <div class="services-overflow-img-layer"></div>
                                     <div class="pl-2 pb-2 pr-2 services-overflow-decs">{{ $service->description }}</div>
                                 </div>
