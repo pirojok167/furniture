@@ -63,7 +63,7 @@
                     {{ $home_info->text ?? 'Перетяжка мягкой мебели' }}
                 </div>
                 <div class="col-lg-6 col-12 order-first order-lg-2">
-                    <img class="img" src="{{ asset('images').'/'.$home_info->image ?? '../images/templates/sofa.png' }}" alt="Диван">
+                    <img class="img" src="{{ asset('images').'/'. ($home_info->image ?? '../images/templates/sofa.png') }}" alt="Диван">
                 </div>
                 <div class="col-12 mt-4 order-3">
                     <div class="row">

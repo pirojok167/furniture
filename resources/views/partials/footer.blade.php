@@ -65,7 +65,7 @@
             </div>
             <div class="col-12 text-center p-2">
                 <hr class="m-0">
-                <small>Разработано: <span style="text-decoration: underline">CodeEx</span></small>
+                <small>Разработано: <a href="https://penka.studio/" style="text-decoration: underline">Penka Studio</a></small>
             </div>
         </div>
     </div>

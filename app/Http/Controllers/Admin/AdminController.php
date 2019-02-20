@@ -6,6 +6,7 @@ use App\Home;
 use App\Http\Controllers\Controller;
 use App\Image;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class AdminController extends Controller
 {
@@ -14,18 +15,28 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
 	public function index()
 	{
-		$home_info = Home::first();
-		return view('admin.home.index')->with('home_info', $home_info);
+        $homeInfo = Home::first();
+		return view('admin.home.index')->with('home_info', $homeInfo);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
 	public function edit()
 	{
 		$home_info = Home::first();
 		return view('admin.home.edit')->with('home_info', $home_info);
 	}
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
 	public function update(Request $request)
 	{
 		$data = $request->except('_token', 'image');

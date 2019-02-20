@@ -1,6 +1,0 @@
-addDefaultCharset utf-8
-RewriteEngine On
-
-RewriteCond %{REQUEST_URI} !^public
-RewriteRule ^(.*)$ public/$1 [L]
-

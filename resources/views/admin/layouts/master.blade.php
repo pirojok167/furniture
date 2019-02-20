@@ -28,7 +28,7 @@
     </ul>
 </div>
 <div class="container-fluid admin-main-fluid p-0 m-0">
-    @include('Admin.partials.header')
+    @include('admin.partials.header')
     @yield('content')
 </div>
 @section('paginate')
@@ -36,6 +36,6 @@
         {!! $paginate !!}
     @endif
 @show
-@include('Admin.template.scripts')
+@include('admin.template.scripts')
 </body>
 </html>

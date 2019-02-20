@@ -1,4 +1,4 @@
-@extends('Admin.layouts.master')
+@extends('admin.layouts.master')
 @section('content')
     <div class="container-fluid bg-beige pt-4" style="padding-bottom: 100px; min-height: 100vh">
         <div class="container">

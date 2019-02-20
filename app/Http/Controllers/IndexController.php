@@ -31,7 +31,10 @@ class IndexController extends Controller
 		$contacts = $this->contacts;
 
 		$vowels = [" ", "-","(",")","+"];
-		$contacts->messenger = str_replace($vowels, "", $contacts->phone_1);
+
+		if ($contacts !== null) {
+            $contacts->messenger = str_replace($vowels, "", $contacts->phone_1);
+        }
 
 		return view('home')->with([
 			'services' => $this->services,
